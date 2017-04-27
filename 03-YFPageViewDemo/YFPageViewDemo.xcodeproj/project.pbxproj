@@ -17,6 +17,8 @@
 		376DC38B1EB1F3AE002BECEE /* YFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DC38A1EB1F3AE002BECEE /* YFPageView.swift */; };
 		376DC38D1EB1F3C1002BECEE /* YFTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DC38C1EB1F3C1002BECEE /* YFTitleView.swift */; };
 		376DC38F1EB1F3D4002BECEE /* YFContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DC38E1EB1F3D4002BECEE /* YFContentView.swift */; };
+		376DC3911EB1F541002BECEE /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DC3901EB1F541002BECEE /* UIColor-Extension.swift */; };
+		376DC3931EB1F835002BECEE /* YFPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DC3921EB1F835002BECEE /* YFPageStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		376DC38A1EB1F3AE002BECEE /* YFPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFPageView.swift; sourceTree = "<group>"; };
 		376DC38C1EB1F3C1002BECEE /* YFTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFTitleView.swift; sourceTree = "<group>"; };
 		376DC38E1EB1F3D4002BECEE /* YFContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFContentView.swift; sourceTree = "<group>"; };
+		376DC3901EB1F541002BECEE /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		376DC3921EB1F835002BECEE /* YFPageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFPageStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				376DC3891EB1F2F6002BECEE /* YFPageView */,
 				376DC35B1EB1F225002BECEE /* AppDelegate.swift */,
 				376DC35D1EB1F225002BECEE /* ViewController.swift */,
+				376DC3901EB1F541002BECEE /* UIColor-Extension.swift */,
 				376DC35F1EB1F225002BECEE /* Main.storyboard */,
 				376DC3621EB1F225002BECEE /* Assets.xcassets */,
 				376DC3641EB1F225002BECEE /* LaunchScreen.storyboard */,
@@ -135,6 +140,7 @@
 		376DC3891EB1F2F6002BECEE /* YFPageView */ = {
 			isa = PBXGroup;
 			children = (
+				376DC3921EB1F835002BECEE /* YFPageStyle.swift */,
 				376DC38A1EB1F3AE002BECEE /* YFPageView.swift */,
 				376DC38C1EB1F3C1002BECEE /* YFTitleView.swift */,
 				376DC38E1EB1F3D4002BECEE /* YFContentView.swift */,
@@ -278,9 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				376DC38D1EB1F3C1002BECEE /* YFTitleView.swift in Sources */,
+				376DC3911EB1F541002BECEE /* UIColor-Extension.swift in Sources */,
 				376DC38B1EB1F3AE002BECEE /* YFPageView.swift in Sources */,
 				376DC35E1EB1F225002BECEE /* ViewController.swift in Sources */,
 				376DC35C1EB1F225002BECEE /* AppDelegate.swift in Sources */,
+				376DC3931EB1F835002BECEE /* YFPageStyle.swift in Sources */,
 				376DC38F1EB1F3D4002BECEE /* YFContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

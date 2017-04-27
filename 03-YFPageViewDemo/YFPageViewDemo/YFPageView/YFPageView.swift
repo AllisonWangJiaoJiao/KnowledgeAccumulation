@@ -26,6 +26,8 @@ class YFPageView: UIView {
         
         super.init(frame: frame)
         
+         setupUI()
+        
     }
     
     //只要有自定义构造函数,必须实现init方法
@@ -38,6 +40,9 @@ class YFPageView: UIView {
 extension YFPageView {
     
     fileprivate func setupUI() {
+        
+        setupTitleView()
+        setupContentView()
         
     }
     

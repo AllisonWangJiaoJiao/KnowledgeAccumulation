@@ -66,6 +66,10 @@ class YFContentView: UIView {
 extension YFContentView {
     fileprivate func setupUI(){
         
+        // 1.将childVc添加到父控制器中
+        for vc in childVcs {
+            parentVc.addChildViewController(vc)
+        }
         // 2.初始化用于显示子控制器View的View（UIScrollView/UICollectionView）
         addSubview(collectionView)
         

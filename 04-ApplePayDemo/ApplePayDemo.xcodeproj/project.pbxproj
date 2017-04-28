@@ -16,6 +16,8 @@
 		376EA23B1EB309B8009E9548 /* ApplePayDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EA23A1EB309B8009E9548 /* ApplePayDemoUITests.swift */; };
 		376EA2491EB30AC7009E9548 /* YFDataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EA2481EB30AC7009E9548 /* YFDataTools.swift */; };
 		376EA24C1EB32F04009E9548 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376EA24B1EB32F04009E9548 /* StoreKit.framework */; };
+		376EA24F1EB3396A009E9548 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EA24D1EB3396A009E9548 /* CustomTableViewCell.swift */; };
+		376EA2501EB3396A009E9548 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376EA24E1EB3396A009E9548 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		376EA23C1EB309B8009E9548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		376EA2481EB30AC7009E9548 /* YFDataTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YFDataTools.swift; sourceTree = "<group>"; };
 		376EA24B1EB32F04009E9548 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		376EA24D1EB3396A009E9548 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		376EA24E1EB3396A009E9548 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				376EA2481EB30AC7009E9548 /* YFDataTools.swift */,
 				376EA21A1EB309B8009E9548 /* AppDelegate.swift */,
 				376EA21C1EB309B8009E9548 /* ViewController.swift */,
+				376EA24D1EB3396A009E9548 /* CustomTableViewCell.swift */,
+				376EA24E1EB3396A009E9548 /* CustomTableViewCell.xib */,
 				376EA21E1EB309B8009E9548 /* Main.storyboard */,
 				376EA2211EB309B8009E9548 /* Assets.xcassets */,
 				376EA2231EB309B8009E9548 /* LaunchScreen.storyboard */,
@@ -255,6 +261,7 @@
 			files = (
 				376EA2251EB309B8009E9548 /* LaunchScreen.storyboard in Resources */,
 				376EA2221EB309B8009E9548 /* Assets.xcassets in Resources */,
+				376EA2501EB3396A009E9548 /* CustomTableViewCell.xib in Resources */,
 				376EA2201EB309B8009E9548 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +289,7 @@
 			files = (
 				376EA21D1EB309B8009E9548 /* ViewController.swift in Sources */,
 				376EA21B1EB309B8009E9548 /* AppDelegate.swift in Sources */,
+				376EA24F1EB3396A009E9548 /* CustomTableViewCell.swift in Sources */,
 				376EA2491EB30AC7009E9548 /* YFDataTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +541,7 @@
 				376EA2411EB309B8009E9548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		376EA2421EB309B8009E9548 /* Build configuration list for PBXNativeTarget "ApplePayDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +550,7 @@
 				376EA2441EB309B8009E9548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		376EA2451EB309B8009E9548 /* Build configuration list for PBXNativeTarget "ApplePayDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +559,7 @@
 				376EA2471EB309B8009E9548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

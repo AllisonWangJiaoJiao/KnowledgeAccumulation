@@ -9,8 +9,11 @@
 import UIKit
 import StoreKit
 
+
+
 class ViewController: UIViewController {
     
+    let cellID = "CustomTableViewCellID"
     
     @IBOutlet weak var tableView: UITableView!
     var productsArr : [SKProduct] = [SKProduct](){
@@ -22,6 +25,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.register( UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier:cellID)
         
         //1.从我们自己的服务器,获取需要销售的商品
       
@@ -50,6 +55,7 @@ extension ViewController: SKProductsRequestDelegate{
         //products 可以被销售的商品
         //invalidProductIdentifiers 无效的商品ID
 
+        productsArr = response.products
         print("可以被销售的商品:\(response.products)")
         print("无效的商品ID :\(response.invalidProductIdentifiers)")
     }
@@ -63,14 +69,17 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         return productsArr.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCellID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! CustomTableViewCell
         //获取对应的商品数据模型
         let product = productsArr[indexPath.row]
         
         cell.textLabel?.text = product.localizedTitle
-        cell.textLabel?.text = product.localizedDescription + "\(product.price)"
-        
+        cell.subTitleLab?.text = product.localizedDescription + "\(product.price)"
         
         return cell
         

@@ -48,7 +48,7 @@ extension YFPageView {
     
     private func setupTitleView(){
         let titleFrame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleViewHeight)
-        titleView = YFTitleView(frame: titleFrame, titles: titles)
+        titleView = YFTitleView(frame: titleFrame, titles: titles, style:style)
         addSubview(titleView)
         titleView.backgroundColor = UIColor.randomColor()
         

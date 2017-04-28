@@ -10,15 +10,25 @@ import UIKit
 
 class YFTitleView: UIView {
     fileprivate var titles : [String]
+    fileprivate var style : YFPageStyle
 
-    init(frame: CGRect,titles:[String]) {
+    init(frame: CGRect,titles:[String],style:YFPageStyle) {
         self.titles = titles
+        self.style = style
         super.init(frame: frame)
         
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+extension YFTitleView {
+    fileprivate func setupUI() {
+        
+        
+    }
 }

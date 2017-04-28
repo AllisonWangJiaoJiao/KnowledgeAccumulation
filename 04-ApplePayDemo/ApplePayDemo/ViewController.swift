@@ -78,11 +78,65 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         //获取对应的商品数据模型
         let product = productsArr[indexPath.row]
         
-        cell.textLabel?.text = product.localizedTitle
+        cell.titleLab?.text = product.localizedTitle
         cell.subTitleLab?.text = product.localizedDescription + "\(product.price)"
         
         return cell
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //取出需要购买的商品
+        let product = productsArr[indexPath.row]
+        
+        //2.购买商品
+        //2.1 根据商品,开一个支付小票
+        let payment = SKPayment(product: product)
+        //2.2添加到支付队列,开始进行购买队列
+        SKPaymentQueue.default().add(payment)
+        //2.3添加交易队列坚挺着,来监听交易状态
+        SKPaymentQueue.default().add(self)
+ 
+    }
 }
+
+//MARK:交易队列的监听者
+extension ViewController : SKPaymentTransactionObserver{
+    
+    //当交易队列列名添加的每一笔交易状态发生变化的时候调用
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .deferred:
+                print("延时处理")
+           
+            case .failed:
+                print("支付失败")
+                
+            case .purchased:
+                print("支付成功")
+                
+            case .purchasing:
+                print("正在支付")
+                
+            case .restored:
+                print("恢复购买")
+            }
+            
+            
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
 

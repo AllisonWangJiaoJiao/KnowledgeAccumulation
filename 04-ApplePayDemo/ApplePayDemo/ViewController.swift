@@ -21,7 +21,17 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
+    //回复购买
+    @IBAction func retortBuyClick(_ sender: UIBarButtonItem) {
+        
+        //回复已经完成的交易
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        SKPaymentQueue.default().add(self)
+        
+    }
+    deinit {
+        SKPaymentQueue.default().remove(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +46,15 @@ class ViewController: UIViewController {
             //2.拿到需要销售的商品,到苹果服务器,进行验证,看下哪些商品,才可以真正被销售
             //2.1 创建一个商品请求,请求哪些商品可以真正的被销售
             let request :SKProductsRequest = SKProductsRequest(productIdentifiers: ids)
-            
+          
             //2.1.1设置代理
             request.delegate = self
             //2.2 发送请求
             request.start()
             
         }
+        
+        
         
         
     }
@@ -80,7 +92,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         
         cell.titleLab?.text = product.localizedTitle
         cell.subTitleLab?.text = product.localizedDescription + "\(product.price)"
-        
+          print(cell.subTitleLab?.text)
         return cell
         
     }
@@ -90,14 +102,16 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         //取出需要购买的商品
         let product = productsArr[indexPath.row]
         
-        //2.购买商品
-        //2.1 根据商品,开一个支付小票
-        let payment = SKPayment(product: product)
-        //2.2添加到支付队列,开始进行购买队列
-        SKPaymentQueue.default().add(payment)
-        //2.3添加交易队列坚挺着,来监听交易状态
-        SKPaymentQueue.default().add(self)
- 
+        //2.0判断当前的支付环境,是否可以支付
+        if SKPaymentQueue.canMakePayments() {
+            //2.购买商品
+            //2.1 根据商品,开一个支付小票
+            let payment = SKPayment(product: product)
+            //2.2添加到支付队列,开始进行购买队列
+            SKPaymentQueue.default().add(payment)
+            //2.3添加交易队列坚挺着,来监听交易状态
+            SKPaymentQueue.default().add(self)
+        }
     }
 }
 

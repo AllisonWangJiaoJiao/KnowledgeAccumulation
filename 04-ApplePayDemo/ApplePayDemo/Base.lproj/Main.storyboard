@@ -38,7 +38,13 @@
                             <constraint firstItem="u1m-hz-fPA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ieg-O6-l5h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="W5y-n9-3H4"/>
+                    <navigationItem key="navigationItem" id="W5y-n9-3H4">
+                        <barButtonItem key="rightBarButtonItem" title="恢复购买" id="JLx-36-mPd">
+                            <connections>
+                                <action selector="retortBuyClick:" destination="BYZ-38-t0r" id="oWK-WE-Xh0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="u1m-hz-fPA" id="o2I-DL-rcE"/>
                     </connections>

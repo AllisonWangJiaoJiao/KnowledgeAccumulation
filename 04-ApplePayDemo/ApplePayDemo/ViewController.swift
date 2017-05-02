@@ -114,15 +114,21 @@ extension ViewController : SKPaymentTransactionObserver{
            
             case .failed:
                 print("支付失败")
+                //应该移除交易队列
+                queue.finishTransaction(transaction)
                 
             case .purchased:
                 print("支付成功")
+                //应该移除交易队列
+                queue.finishTransaction(transaction)
                 
             case .purchasing:
                 print("正在支付")
                 
             case .restored:
                 print("恢复购买")
+                //应该移除交易队列
+                queue.finishTransaction(transaction)
             }
             
             

@@ -10,7 +10,7 @@ import UIKit
 
 class YFPageView: UIView {
     
-    fileprivate var titles : [String]
+    fileprivate var titlesArr : [String]
     fileprivate var childVcs :[UIViewController]
     fileprivate var parentVc :UIViewController
     fileprivate var style: YFPageStyle
@@ -19,7 +19,7 @@ class YFPageView: UIView {
     // MARK: 构造函数
     init(frame : CGRect, titles : [String], childVcs : [UIViewController], parentVc : UIViewController,style:YFPageStyle) {
         
-        self.titles = titles
+        self.titlesArr = titles
         self.childVcs = childVcs
         self.parentVc = parentVc
         self.style = style
@@ -47,10 +47,10 @@ extension YFPageView {
     }
     
     private func setupTitleView(){
-        let titleFrame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleViewHeight)
-        titleView = YFTitleView(frame: titleFrame, titles: titles, style:style)
+        let titleFrame = CGRect(x: 0, y: 64, width: bounds.width, height: style.titleViewHeight)
+        titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style:style)
         addSubview(titleView)
-        titleView.backgroundColor = UIColor.randomColor()
+        titleView.backgroundColor = UIColor.red
         
     }
     

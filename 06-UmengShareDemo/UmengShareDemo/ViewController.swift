@@ -8,15 +8,20 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-       shareAction_pic()
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    func shareAction_pic (){
+    
+    @IBAction func shareWebClick(_ sender: UIButton) {
+        shareActionWeb()
+    }
+    
+    
+    func shareActionWeb(){
         UMSocialUIManager.showShareMenuViewInWindow { (platformType, userInfo) in
             print(platformType,userInfo)
             
@@ -27,7 +32,7 @@ class ViewController: UIViewController {
             let shareObject : UMShareWebpageObject = UMShareWebpageObject.init()
             shareObject.title = "网站"
             shareObject.descr = "测试测试网站"
-            shareObject.thumbImage = UIImage.init(named: "icon_circle")
+            shareObject.thumbImage = UIImage.init(named: "tab_live")
             shareObject.webpageUrl = "http://www.baidu.com"
             messageObject.shareObject = shareObject
             

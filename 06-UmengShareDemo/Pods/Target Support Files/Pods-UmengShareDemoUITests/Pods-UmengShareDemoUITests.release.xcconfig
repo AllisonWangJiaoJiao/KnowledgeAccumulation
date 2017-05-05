@@ -2,7 +2,7 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/UMSoci
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/UMengUShare"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDKPlugin" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Douban" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Renren" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat/WechatSDK"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDKPlugin" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK" $(inherited) "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/WeChat/WechatSDK"
 OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/UMengUShare"
 OTHER_LDFLAGS = $(inherited) -l"c++" -l"sqlite3" -l"z" -framework "CoreGraphics" -framework "CoreTelephony" -framework "ImageIO" -framework "QuartzCore" -framework "SystemConfiguration"
 PODS_BUILD_DIR = $BUILD_DIR

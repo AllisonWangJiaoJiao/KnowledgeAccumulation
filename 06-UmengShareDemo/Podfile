@@ -15,10 +15,6 @@ target 'UmengShareDemo' do
     pod 'UMengUShare/Social/QQ'
     # 集成新浪微博(完整版25.3M)
     pod 'UMengUShare/Social/Sina'
-    # 集成人人
-    pod 'UMengUShare/Social/Renren'
-    # 集成豆瓣
-    pod 'UMengUShare/Social/Douban'
     
 
   target 'UmengShareDemoTests' do

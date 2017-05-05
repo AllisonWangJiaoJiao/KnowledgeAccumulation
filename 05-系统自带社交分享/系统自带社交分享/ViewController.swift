@@ -40,10 +40,7 @@ class ViewController: UIViewController {
                 }
             }
             present(vc!, animated: true, completion: nil)
-            
-      
-            
-            
+
         }else{
             print("请输入账号密码")
         }

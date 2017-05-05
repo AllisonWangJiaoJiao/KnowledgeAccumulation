@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'UmengShareDemo' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for UmengShareDemo
+
+
+    pod 'UMengUShare/UI'
+    # 集成微信(完整版14.4M)
+    pod 'UMengUShare/Social/WeChat'
+    # 集成QQ(完整版7.6M)
+    pod 'UMengUShare/Social/QQ'
+    # 集成新浪微博(完整版25.3M)
+    pod 'UMengUShare/Social/Sina'
+    # 友盟统计(标准SDK，含IDFA)
+    pod 'UMengAnalytics', '~> 4.2.4'
+    
+
+  target 'UmengShareDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'UmengShareDemoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

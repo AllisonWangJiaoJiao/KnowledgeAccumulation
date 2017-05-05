@@ -9,11 +9,17 @@ target 'UmengShareDemo' do
 
 
     pod 'UMengUShare/UI'
-    pod 'UMengUShare/Social/ReducedWeChat'
-    pod 'UMengUShare/Social/ReducedQQ'
-    pod 'UMengUShare/Social/ReducedSina'
-
-
+    # 集成微信(完整版14.4M)
+    pod 'UMengUShare/Social/WeChat'
+    # 集成QQ(完整版7.6M)
+    pod 'UMengUShare/Social/QQ'
+    # 集成新浪微博(完整版25.3M)
+    pod 'UMengUShare/Social/Sina'
+    # 集成人人
+    pod 'UMengUShare/Social/Renren'
+    # 集成豆瓣
+    pod 'UMengUShare/Social/Douban'
+    
 
   target 'UmengShareDemoTests' do
     inherit! :search_paths

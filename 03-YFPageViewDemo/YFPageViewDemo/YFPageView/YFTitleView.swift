@@ -122,7 +122,7 @@ extension YFTitleView {
                 offsetX = 0
             }
             if offsetX > scrollView.contentSize.width - scrollView.bounds.width {
-                offsetX = scrollView.contentSize.width
+                 offsetX = scrollView.contentSize.width - scrollView.bounds.width
             }
             scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
             

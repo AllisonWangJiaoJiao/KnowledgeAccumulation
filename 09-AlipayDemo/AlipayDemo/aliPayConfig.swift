@@ -1,0 +1,14 @@
+//
+//  aliPayConfig.swift
+//  AlipayDemo
+//
+//  Created by Allison on 2017/5/8.
+//  Copyright © 2017年 Allison. All rights reserved.
+//
+
+import Foundation
+
+let appId = "2088912582899360"
+
+let kRsaPrivateKey = "MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJy44D1Lxi7Qk3hcFkFbTLNv8+J57tSKnXuihPjdDk1f2O4QL/AxF4fg4ju3lytS35QmJHJu/19vZBerGL2myjSvtH6JXGIUdrs96vasPYPD6ks3SskqizDHDl32E1UIbZuCZGGccpt05Do2vJTZcndsJcE4SA9bB5DSl252mdH7AgMBAAECgYBEGT0uxUc3PmBl8zWkboSUj7fcl/kEF7s4ZrT64ir9ygEb6KK77sj3vOrw4eRo6djGqhA6PSrwEBnhAvJ8LgY8UlxJ3VpX2hDRFTGjkbde96zRzIegqjjLGFDsz27q3KWSSU74sUPMRWXpEQM3LRrvs4Q1yyuWEazNAIo4RnefUQJBAM4Usk/ZbqWa47hzOfgGETwSmevNJvKE76Wo+1ff+Rk31vMt8lsM6Rjv320EZqm9Tcy+WSZsy/eibmLcbEY2rCMCQQDCr2STlij7J7kCm2R3fduOmII0IbQAeQ8ljJH7RgcxPE3OcaZZ7P78WOjMk12oe8GLcpP0P/2ky98wuoZXMBRJAkBq0yerZJaKmcO5dWFzRBHjBfFr3ih2RprDUNkZMCy7+coevI6IzCR4nL9Aj6t4CX0uyO0FkhgZAcYe0Qv/SY/pAkBrGXvV6RRwXkDcG0ogph8jieiO7z+Lxw07FeK0/ag1QLx45nKiI8t+XRbse+FZL4OgyA52nsFVaEZHE0WWLz/pAkBsJojz6gvL4uKT8Bf2lxbHa12bZHsVDsEX/5nnW2KlLmoJ3M9usQhEuIwESsqzQeA0NR2g8ukUQro9E05P+cwA"
+		

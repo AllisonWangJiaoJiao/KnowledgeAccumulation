@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        automaticallyAdjustsScrollViewInsets = false
+
         //1.标题
         let titles = ["推荐", "手游玩法大全", "娱乐手", "游戏游戏", "趣玩", "游戏游戏", "趣玩"]
         let style = YFPageStyle()
@@ -29,7 +31,6 @@ class ViewController: UIViewController {
         let pageViewFrame = CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height - 64)
         // 5.创建HYPageView
         let pageView =  YFPageView(frame: pageViewFrame, titles: titles, childVcs: childVcs, parentVc: self, style:style)
-       
         // 6.将pageView添加到控制器的view中
         view.addSubview(pageView)
         

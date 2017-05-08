@@ -45,7 +45,7 @@ extension YFTitleView {
         setupTitleLabels()
         
         //3.设置titleLabel的frame
-        setupTitleLablesFrame()
+        setupTitleLabelsFrame()
         
         
     }
@@ -53,11 +53,13 @@ extension YFTitleView {
         for (i ,title) in titlesArr.enumerated() {
              // 1.创建Label
             let titleLabel  = UILabel()
+            titleLabel.backgroundColor = UIColor.red
              // 2.设置label的属性
             titleLabel.text = title
-            titleLabel.textColor = style.normalColor
             titleLabel.font = UIFont.systemFont(ofSize: style.fontSize)
             titleLabel.tag = i
+            titleLabel.textAlignment = .center
+            titleLabel.textColor = i == 0 ? style.selectColor : style.normalColor
              // 3.添加到父控件中
             scrollView.addSubview(titleLabel)
              // 4.保存label
@@ -65,34 +67,36 @@ extension YFTitleView {
             
         }
     }
-    
-    private func setupTitleLablesFrame (){
-        let count  = titlesArr.count
-        
-        for (i, label )  in titleLabelsArr.enumerated() {
-            var w :CGFloat = 0
-            let h :CGFloat = bounds.height
-            var x :CGFloat = 0
-            let y :CGFloat = 0
 
-            if style.isScrollEnable {//可以滚动
-               
-             w = (titlesArr[i] as NSString).boundingRect(with:  CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:style.titleFont], context: nil).width
+    
+    private func setupTitleLabelsFrame() {
+        let count = titlesArr.count
+        
+        for (i, label) in titleLabelsArr.enumerated() {
+            var w : CGFloat = 0
+            let h : CGFloat = bounds.height
+            var x : CGFloat = 0
+            let y : CGFloat = 0
+            
+            if style.isScrollEnable { // 可以滚动
+                w = (titlesArr[i] as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : label.font], context: nil).width
                 if i == 0 {
-                    x = CGFloat(style.itemMargin * 0.5)
-                }else{
+                    x = style.itemMargin * 0.5
+                } else {
                     let preLabel = titleLabelsArr[i - 1]
                     x = preLabel.frame.maxX + style.itemMargin
                 }
-                
-            }else{//不能滚动
+            } else { // 不能滚动
                 w = bounds.width / CGFloat(count)
                 x = w * CGFloat(i)
             }
+            
             label.frame = CGRect(x: x, y: y, width: w, height: h)
-         
         }
+        
+//        scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabelsArr.last!.frame.maxX + style.itemMargin * 0.5, height: 0) : CGSize.zero
     }
+    
 }
 
 

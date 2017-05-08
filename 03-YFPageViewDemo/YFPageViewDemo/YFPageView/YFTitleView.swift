@@ -12,7 +12,7 @@ class YFTitleView: UIView {
     fileprivate var titlesArr : [String]
     fileprivate var style : YFPageStyle
     fileprivate lazy var titleLabelsArr : [UILabel] = [UILabel]()
-
+    fileprivate var currentIndex :Int = 0
 
     
     fileprivate lazy var scrollView : UIScrollView = {
@@ -64,6 +64,11 @@ extension YFTitleView {
              // 4.保存label
             titleLabelsArr.append(titleLabel)
             
+            //给UILabel添加点击手势
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(titleLabelClick(_:)))
+            titleLabel.addGestureRecognizer(tapGes)
+            titleLabel.isUserInteractionEnabled = true
+            
         }
     }
 
@@ -99,7 +104,34 @@ extension YFTitleView {
 }
 
 
-
+// MARK:- 监听事件
+extension YFTitleView {
+    @objc fileprivate func titleLabelClick(_ tapGes : UITapGestureRecognizer) {
+       //1.取出用户点击的View
+        let targetLabel = tapGes.view as! UILabel
+        let sourceLabel = titleLabelsArr[currentIndex]
+        //2.切换文字的颜色
+        targetLabel.textColor = style.selectColor
+        sourceLabel.textColor = style.normalColor
+        //3.记录下标值
+        currentIndex = targetLabel.tag
+        //4.调整位置 -- 选中的按钮居中
+        if style.isScrollEnable {
+            var offsetX = targetLabel.center.x - scrollView.bounds.width * 0.5
+            if offsetX < 0 {
+                offsetX = 0
+            }
+            if offsetX > scrollView.contentSize.width - scrollView.bounds.width {
+                offsetX = scrollView.contentSize.width
+            }
+            scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+            
+        }
+        
+        
+    
+    }
+}
 
 
 

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let titles = ["推荐", "手游玩法大全", "娱乐手", "游戏游戏", "趣玩", "游戏游戏", "趣玩"]
         let style = YFPageStyle()
         style.titleViewHeight = 44
+        style.isScrollEnable = true
         
         //2.自控制器
         var childVcs = [UIViewController]()

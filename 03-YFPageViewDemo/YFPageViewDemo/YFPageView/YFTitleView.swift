@@ -53,7 +53,6 @@ extension YFTitleView {
         for (i ,title) in titlesArr.enumerated() {
              // 1.创建Label
             let titleLabel  = UILabel()
-            titleLabel.backgroundColor = UIColor.red
              // 2.设置label的属性
             titleLabel.text = title
             titleLabel.font = UIFont.systemFont(ofSize: style.fontSize)
@@ -94,7 +93,7 @@ extension YFTitleView {
             label.frame = CGRect(x: x, y: y, width: w, height: h)
         }
         
-//        scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabelsArr.last!.frame.maxX + style.itemMargin * 0.5, height: 0) : CGSize.zero
+        scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabelsArr.last!.frame.maxX + style.itemMargin * 0.5, height: 0) : CGSize.zero
     }
     
 }

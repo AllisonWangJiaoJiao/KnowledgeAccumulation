@@ -8,7 +8,16 @@
 
 import UIKit
 
+protocol YFTitleViewDelegate : class {
+    func titleView(_ titleView : YFTitleView, targetIndex : Int)
+}
+
+
 class YFTitleView: UIView {
+    
+    weak var delegate : YFTitleViewDelegate?
+
+    
     fileprivate var titlesArr : [String]
     fileprivate var style : YFPageStyle
     fileprivate lazy var titleLabelsArr : [UILabel] = [UILabel]()
@@ -115,7 +124,11 @@ extension YFTitleView {
         sourceLabel.textColor = style.normalColor
         //3.记录下标值
         currentIndex = targetLabel.tag
-        //4.调整位置 -- 选中的按钮居中
+        
+        //4.通知ContentView进行调整
+        delegate?.titleView(self, targetIndex: currentIndex)
+        
+        //5.调整位置 -- 选中的按钮居中
         if style.isScrollEnable {
             var offsetX = targetLabel.center.x - scrollView.bounds.width * 0.5
             if offsetX < 0 {

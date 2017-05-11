@@ -103,7 +103,14 @@ extension YFContentView : UICollectionViewDelegate {
     
 }
 
-
+//MARK:-遵守titleViewDelegate
+extension YFContentView :YFTitleViewDelegate{
+    func titleView(_ titleView: YFTitleView, targetIndex: Int) {
+        let indexPath = IndexPath(item: targetIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+        
+    }
+}
 
 
 

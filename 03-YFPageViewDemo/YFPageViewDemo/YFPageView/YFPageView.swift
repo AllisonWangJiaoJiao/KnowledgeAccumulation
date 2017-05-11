@@ -60,9 +60,17 @@ extension YFPageView {
         addSubview(contentView)
         contentView.backgroundColor = UIColor.randomColor()
         
-        
+        //让contentView成为titleView的代理
+        titleView.delegate = contentView
     }
     
-    
-    
 }
+
+
+
+
+
+
+
+
+

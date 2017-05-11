@@ -18,9 +18,16 @@ import UIKit
 
 private let kContentCellID = "kContentCellID"
 
+protocol YFContentViewDelegate:class {
+    func contentView(_ contentView: YFContentView, targetIndex: Int)
+}
+
 
 class YFContentView: UIView {
-    fileprivate var childVcs : [UIViewController]
+    
+    weak var  delegate : YFContentViewDelegate?
+    
+    fileprivate var childVcsArr : [UIViewController]
     fileprivate var parentVc : UIViewController
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -44,7 +51,7 @@ class YFContentView: UIView {
     // MARK: 构造函数
     init(frame : CGRect, childVcs : [UIViewController], parentVc : UIViewController) {
         
-        self.childVcs = childVcs
+        self.childVcsArr = childVcs
         self.parentVc = parentVc
         super.init(frame: frame)
         
@@ -67,7 +74,7 @@ extension YFContentView {
     fileprivate func setupUI(){
         
         // 1.将childVc添加到父控制器中
-        for vc in childVcs {
+        for vc in childVcsArr {
             parentVc.addChildViewController(vc)
         }
         // 2.初始化用于显示子控制器View的View（UIScrollView/UICollectionView）
@@ -79,7 +86,7 @@ extension YFContentView {
 // MARK:- 遵守UICollectionViewDataSource协议
 extension YFContentView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return childVcs.count
+        return childVcsArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,7 +96,7 @@ extension YFContentView : UICollectionViewDataSource {
             subview.removeFromSuperview()
         }
         //把控制器都加到Item里面.
-        let vc = childVcs[indexPath.item]
+        let vc = childVcsArr[indexPath.item]
         vc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(vc.view)
 
@@ -100,10 +107,28 @@ extension YFContentView : UICollectionViewDataSource {
 
 // MARK:- 遵守UICollectionViewDelegate协议
 extension YFContentView : UICollectionViewDelegate {
+    //目标:滚动停止 标签的选中状态改变
+    //1.停止减速
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        contentEndScroll()
+    }
+    //2.没有减速
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        contentEndScroll()
+    }
+    
+     private func contentEndScroll() {
+        //获取滚动到的位置
+        let currentIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
+        //通知titleView进行调整
+        delegate?.contentView(self, targetIndex: currentIndex)
+        
+    }
+    
     
 }
 
-//MARK:-遵守titleViewDelegate
+//MARK:-遵守titleViewDelegate  点击标签,切换下面的contentView
 extension YFContentView :YFTitleViewDelegate{
     func titleView(_ titleView: YFTitleView, targetIndex: Int) {
         let indexPath = IndexPath(item: targetIndex, section: 0)
@@ -111,9 +136,6 @@ extension YFContentView :YFTitleViewDelegate{
         
     }
 }
-
-
-
 
 
 

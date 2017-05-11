@@ -118,15 +118,27 @@ extension YFTitleView {
     @objc fileprivate func titleLabelClick(_ tapGes : UITapGestureRecognizer) {
        //1.取出用户点击的View
         let targetLabel = tapGes.view as! UILabel
+
+        //2.调整title
+        adjustTitleLabel(targetIndex: targetLabel.tag)
+        
+        //3.通知ContentView进行调整
+        delegate?.titleView(self, targetIndex: currentIndex)
+        
+
+    }
+    
+    fileprivate func adjustTitleLabel(targetIndex : Int) {
+        //1.取出label
+        let targetLabel = titleLabelsArr[targetIndex]
         let sourceLabel = titleLabelsArr[currentIndex]
+        
         //2.切换文字的颜色
         targetLabel.textColor = style.selectColor
         sourceLabel.textColor = style.normalColor
-        //3.记录下标值
-        currentIndex = targetLabel.tag
         
-        //4.通知ContentView进行调整
-        delegate?.titleView(self, targetIndex: currentIndex)
+        //3.记录下值
+        currentIndex = targetLabel.tag
         
         //5.调整位置 -- 选中的按钮居中
         if style.isScrollEnable {
@@ -135,16 +147,27 @@ extension YFTitleView {
                 offsetX = 0
             }
             if offsetX > scrollView.contentSize.width - scrollView.bounds.width {
-                 offsetX = scrollView.contentSize.width - scrollView.bounds.width
+                offsetX = scrollView.contentSize.width - scrollView.bounds.width
             }
             scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
             
         }
         
-        
+    }
     
+}
+
+//MARK:-遵循YFContentViewDelegate 滑动contentView标签调整
+extension YFTitleView : YFContentViewDelegate{
+    func contentView(_ contentView: YFContentView, targetIndex: Int) {
+     
+        adjustTitleLabel(targetIndex: targetIndex)
+        
     }
 }
+
+
+
 
 
 

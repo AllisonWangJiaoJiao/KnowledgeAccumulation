@@ -62,6 +62,8 @@ extension YFPageView {
         
         //让contentView成为titleView的代理
         titleView.delegate = contentView
+        //让titleView成为contentView的代理
+        contentView.delegate = titleView
     }
     
 }

@@ -20,6 +20,8 @@ private let kContentCellID = "kContentCellID"
 
 protocol YFContentViewDelegate:class {
     func contentView(_ contentView: YFContentView, targetIndex: Int)
+    func contentView(_ contentView: YFContentView, targetIndex: Int,progress : CGFloat)
+
 }
 
 
@@ -27,6 +29,7 @@ class YFContentView: UIView {
     
     weak var  delegate : YFContentViewDelegate?
     
+    fileprivate var startOffsetX :CGFloat = 0 //记录开始拖拽的值
     fileprivate var childVcsArr : [UIViewController]
     fileprivate var parentVc : UIViewController
     fileprivate lazy var collectionView : UICollectionView = {
@@ -122,6 +125,45 @@ extension YFContentView : UICollectionViewDelegate {
         let currentIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
         //通知titleView进行调整
         delegate?.contentView(self, targetIndex: currentIndex)
+        
+    }
+    
+    //开始拖拽
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+        
+    }
+    
+    //实时监控滚动
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //0.判断和我开始时的偏移量是否一致
+        guard startOffsetX != scrollView.contentOffset.x else {
+            return
+        }
+        
+        // 1.定义目标的index、进度
+        var targetIndex : Int = 0
+        var progress : CGFloat = 0
+        
+        // 2.判断用户是左滑还是右滑
+        if scrollView.contentOffset.x > startOffsetX { // 左滑
+            targetIndex = Int(startOffsetX / scrollView.bounds.width) + 1
+            if targetIndex >= childVcsArr.count {
+                targetIndex = childVcsArr.count - 1
+            }
+            progress = (scrollView.contentOffset.x - startOffsetX) / scrollView.bounds.width
+        } else { // 右滑
+            targetIndex = Int(startOffsetX / scrollView.bounds.width) - 1
+            if targetIndex < 0 {
+                targetIndex = 0
+            }
+            progress = (startOffsetX - scrollView.contentOffset.x) / scrollView.bounds.width
+        }
+        
+
+        //3.通知代理
+        delegate?.contentView(self, targetIndex: targetIndex, progress: progress)
+        
         
     }
     

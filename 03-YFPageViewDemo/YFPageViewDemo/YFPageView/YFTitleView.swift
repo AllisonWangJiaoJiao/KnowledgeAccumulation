@@ -157,9 +157,7 @@ extension YFTitleView {
             scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
             
         }
-        
     }
-    
 }
 
 //MARK:-遵循YFContentViewDelegate 滑动contentView标签调整
@@ -168,22 +166,23 @@ extension YFTitleView : YFContentViewDelegate{
         adjustTitleLabel(targetIndex: targetIndex)
     }
     
+
+    
     func contentView(_ contentView: YFContentView, targetIndex: Int, progress: CGFloat) {
         print(targetIndex)
         print(progress)
+    
+        //1.取出label
+        let targetLabel = titleLabelsArr[targetIndex]
+        let sourceLabel = titleLabelsArr[currentIndex]
         
-//        //1.取出label
-//        let targetLabel = titleLabelsArr[targetIndex]
-//        let sourceLabel = titleLabelsArr[currentIndex]
-//        
-//        //2.颜色渐变
-//        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
-//        let selectRGB = style.selectColor.getRGB()
-//        let normalRGB = style.normalColor.getRGB()
-//        
-//        sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
-//        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        //2.颜色渐变
+        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
+        let selectRGB = style.selectColor.getRGB()
+        let normalRGB = style.normalColor.getRGB()
         
+        sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
     }
 
 }

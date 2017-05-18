@@ -19,8 +19,8 @@ import UIKit
 private let kContentCellID = "kContentCellID"
 
 protocol YFContentViewDelegate:class {
-    func contentView(_ contentView: YFContentView, targetIndex: Int)
-    func contentView(_ contentView: YFContentView, targetIndex: Int,progress : CGFloat)
+    func contentView(_ contentView : YFContentView, targetIndex: Int)
+    func contentView(_ contentView : YFContentView, targetIndex : Int, progress : CGFloat)
 
 }
 
@@ -29,6 +29,7 @@ class YFContentView: UIView {
     
     weak var  delegate : YFContentViewDelegate?
     
+    fileprivate lazy var isForbidDelegate : Bool = false
     fileprivate var startOffsetX :CGFloat = 0 //记录开始拖拽的值
     fileprivate var childVcsArr : [UIViewController]
     fileprivate var parentVc : UIViewController
@@ -130,6 +131,8 @@ extension YFContentView : UICollectionViewDelegate {
     
     //开始拖拽
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // 记录开始的位置
+        isForbidDelegate = false
         startOffsetX = scrollView.contentOffset.x
         
     }
@@ -137,9 +140,7 @@ extension YFContentView : UICollectionViewDelegate {
     //实时监控滚动
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //0.判断和我开始时的偏移量是否一致
-        guard startOffsetX != scrollView.contentOffset.x else {
-            return
-        }
+       if scrollView.contentOffset.x == startOffsetX || isForbidDelegate { return }
         
         // 1.定义目标的index、进度
         var targetIndex : Int = 0
@@ -160,19 +161,16 @@ extension YFContentView : UICollectionViewDelegate {
             progress = (startOffsetX - scrollView.contentOffset.x) / scrollView.bounds.width
         }
         
-
         //3.通知代理
-        delegate?.contentView(self, targetIndex: targetIndex, progress: progress)
-        
+        delegate?.contentView(self, targetIndex: targetIndex, progress: progress)        
         
     }
-    
-    
 }
 
 //MARK:-遵守titleViewDelegate  点击标签,切换下面的contentView
 extension YFContentView :YFTitleViewDelegate{
     func titleView(_ titleView: YFTitleView, targetIndex: Int) {
+         isForbidDelegate = true
         let indexPath = IndexPath(item: targetIndex, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
         

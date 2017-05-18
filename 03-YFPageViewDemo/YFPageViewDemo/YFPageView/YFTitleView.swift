@@ -31,6 +31,13 @@ class YFTitleView: UIView {
         return scrollView
     }()
     
+    fileprivate lazy var bottomLine : UIView = {
+        let bottomLine = UIView()
+        bottomLine.backgroundColor = self.style.bottomLineColor
+        bottomLine.frame.size.height = self.style.bottomLineHeight
+        return bottomLine
+    }()
+    
     init(frame: CGRect,titles:[String],style:YFPageStyle) {
         self.titlesArr = titles
         self.style = style
@@ -56,8 +63,24 @@ extension YFTitleView {
         //3.设置titleLabel的frame
         setupTitleLabelsFrame()
         
+        // 4.设置BottomLine
+        setupBottomLine()
+        
         
     }
+    private func setupBottomLine() {
+        // 1.判断是否需要显示底部线段
+        guard style.isShowBottomLine else { return }
+        
+        // 2.将bottomLine添加到titleView中
+        scrollView.addSubview(bottomLine)
+        
+        // 3.设置frame
+        bottomLine.frame.origin.x = titleLabelsArr.first!.frame.origin.x
+        bottomLine.frame.origin.y = bounds.height - style.bottomLineHeight
+        bottomLine.frame.size.width = titleLabelsArr.first!.bounds.width
+    }
+    
     private func setupTitleLabels(){
         for (i ,title) in titlesArr.enumerated() {
              // 1.创建Label
@@ -125,6 +148,14 @@ extension YFTitleView {
         //3.通知ContentView进行调整
         delegate?.titleView(self, targetIndex: currentIndex)
         
+        // 4.调整BottomLine
+        if style.isShowBottomLine {
+            bottomLine.frame.origin.x = targetLabel.frame.origin.x
+            bottomLine.frame.size.width = targetLabel.frame.width
+        }
+        
+        
+        
 
     }
     
@@ -166,15 +197,14 @@ extension YFTitleView : YFContentViewDelegate{
         adjustTitleLabel(targetIndex: targetIndex)
     }
     
-
     
     func contentView(_ contentView: YFContentView, targetIndex: Int, progress: CGFloat) {
-        print(targetIndex)
+    
         print(progress)
     
         //1.取出label
-        let targetLabel = titleLabelsArr[targetIndex]
         let sourceLabel = titleLabelsArr[currentIndex]
+        let targetLabel = titleLabelsArr[targetIndex]
         
         //2.颜色渐变
         let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
@@ -183,6 +213,16 @@ extension YFTitleView : YFContentViewDelegate{
         
         sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
         targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        
+        
+        // 3.渐变BottomLine
+        if style.isShowBottomLine {
+            let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+            let deltaW = targetLabel.frame.width - sourceLabel.frame.width
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
+            bottomLine.frame.size.width = sourceLabel.frame.width + deltaW * progress
+        }
+        
     }
 
 }

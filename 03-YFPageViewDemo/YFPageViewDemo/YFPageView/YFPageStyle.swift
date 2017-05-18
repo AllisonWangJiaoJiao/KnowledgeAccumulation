@@ -22,6 +22,11 @@ class YFPageStyle {
     var isScrollEnable : Bool = false
     //间距
     var itemMargin : CGFloat = 20
+    
+    
+    var isShowBottomLine : Bool = true
+    var bottomLineColor : UIColor = UIColor.orange
+    var bottomLineHeight : CGFloat = 2
 
     
     

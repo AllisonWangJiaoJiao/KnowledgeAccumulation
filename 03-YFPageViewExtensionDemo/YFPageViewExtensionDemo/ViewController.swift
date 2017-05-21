@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let kEmoticonCell = "kEmoticonCell"
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -24,13 +26,28 @@ class ViewController: UIViewController {
         layout.cols = 7
         layout.rows = 3
         let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: true, layout: layout, style: style)
+        pageCollectionView.dataSource = self
+        pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kEmoticonCell)
+
         view.addSubview(pageCollectionView)
-        
-        
-        
     }
-
-
-
 }
 
+extension ViewController : YFPageCollectionViewDataSource{
+    
+    func numberOfSections(in pageCollectionView: YFPageCollectionView) -> Int {
+        return 4
+    }
+    
+    func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int(arc4random_uniform(30)) + 25
+    }
+    
+    func pageCollectionView(_ pageCollectionView: YFPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kEmoticonCell, for: indexPath)
+        
+        cell.backgroundColor = UIColor.randomColor()
+        
+        return cell
+    }
+}

@@ -8,14 +8,23 @@
 
 import UIKit
 
-private let kCollectionViewCell = "kCollectionViewCell"
+protocol YFPageCollectionViewDataSource : class {
+    func numberOfSections(in pageCollectionView : YFPageCollectionView) -> Int
+    func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int
+    func pageCollectionView(_ pageCollectionView : YFPageCollectionView ,_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+}
+
+//private let kCollectionViewCell = "kCollectionViewCell"
 
 class YFPageCollectionView: UIView {
     
+     weak var dataSource : YFPageCollectionViewDataSource?
     fileprivate var titlesArr:[String]
     fileprivate var isTitleInTop: Bool
     fileprivate var layout: YFPageCollectionViewLayout
     fileprivate var style: YFPageStyle
+    fileprivate var collectionView : UICollectionView!
+
     
     init(frame: CGRect,titles:[String],isTitleInTop :Bool,layout:YFPageCollectionViewLayout,style:YFPageStyle) {
         self.titlesArr = titles
@@ -59,34 +68,42 @@ extension YFPageCollectionView{
         //创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlHeight)
-        let collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCell)
+        //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCell)
         addSubview(collectionView)
         collectionView.backgroundColor = UIColor.randomColor()
         
     }
 }
 
+// MARK:- 对外暴露的方法
+extension YFPageCollectionView {
+    func register(cell : AnyClass?, identifier : String) {
+        collectionView.register(cell, forCellWithReuseIdentifier: identifier)
+    }
+    
+    func register(nib : UINib, identifier : String) {
+        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    }
+}
 
+
+// MARK:- UICollectionViewDataSource
 extension YFPageCollectionView:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+         return dataSource?.numberOfSections(in: self) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(arc4random_uniform(30)) + 30
+         return dataSource?.pageCollectionView(self, numberOfItemsInSection: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCell, for: indexPath)
-        
-        cell.backgroundColor = UIColor.randomColor()
-        
-        return cell
+        return dataSource!.pageCollectionView(self, collectionView, cellForItemAt: indexPath)
     }
     
 }

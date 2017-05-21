@@ -18,10 +18,11 @@ class ViewController: UIViewController {
         let style = YFPageStyle()
         style.isShowBottomLine = true
         let layout = YFPageCollectionViewLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
-        layout.minimumLineSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
+        layout.minimumLineSpacing = 0
         layout.minimumLineSpacing = 20
-//        layout.cols = 5
+        layout.cols = 7
+        layout.rows = 3
         let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: true, layout: layout, style: style)
         view.addSubview(pageCollectionView)
         

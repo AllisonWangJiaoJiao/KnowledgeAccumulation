@@ -78,7 +78,7 @@ extension YFPageCollectionView:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(arc4random_uniform(30)) + 10
+        return Int(arc4random_uniform(30)) + 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

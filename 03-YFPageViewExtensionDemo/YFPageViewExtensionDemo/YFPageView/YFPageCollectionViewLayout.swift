@@ -45,9 +45,9 @@ extension YFPageCollectionViewLayout {
                 let attr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 
                 //2.3.1 计算j在在改组中第几列
-                let page = j/8
+                let page = j / (cols * rows)
                 //2.3.2 在该页的第几个
-                let index = j % 8
+                let index = j % (cols * rows)
                 
                 //2.3 设置attr的frame
                 let itemY = sectionInset.top + (itemH + minimumLineSpacing) * CGFloat(index / cols)

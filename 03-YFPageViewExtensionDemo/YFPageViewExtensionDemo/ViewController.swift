@@ -17,9 +17,11 @@ class ViewController: UIViewController {
         let titlesArr = ["土豪","热门","专属","礼物"]
         let style = YFPageStyle()
         style.isShowBottomLine = true
-        let layout = UICollectionViewFlowLayout()
-        
-        
+        let layout = YFPageCollectionViewLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 20
+//        layout.cols = 5
         let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: true, layout: layout, style: style)
         view.addSubview(pageCollectionView)
         

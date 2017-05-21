@@ -8,14 +8,16 @@
 
 import UIKit
 
+private let kCollectionViewCell = "kCollectionViewCell"
+
 class YFPageCollectionView: UIView {
     
     fileprivate var titlesArr:[String]
     fileprivate var isTitleInTop: Bool
-    fileprivate var layout: UICollectionViewFlowLayout
+    fileprivate var layout: YFPageCollectionViewLayout
     fileprivate var style: YFPageStyle
     
-    init(frame: CGRect,titles:[String],isTitleInTop :Bool,layout:UICollectionViewFlowLayout,style:YFPageStyle) {
+    init(frame: CGRect,titles:[String],isTitleInTop :Bool,layout:YFPageCollectionViewLayout,style:YFPageStyle) {
         self.titlesArr = titles
         self.isTitleInTop = isTitleInTop
         self.layout = layout
@@ -58,6 +60,10 @@ extension YFPageCollectionView{
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlHeight)
         let collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.dataSource = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCell)
         addSubview(collectionView)
         collectionView.backgroundColor = UIColor.randomColor()
         
@@ -65,7 +71,25 @@ extension YFPageCollectionView{
 }
 
 
-
+extension YFPageCollectionView:UICollectionViewDataSource{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int(arc4random_uniform(30)) + 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCell, for: indexPath)
+        
+        cell.backgroundColor = UIColor.randomColor()
+        
+        return cell
+    }
+    
+}
 
 
 

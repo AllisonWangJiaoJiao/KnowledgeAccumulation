@@ -23,7 +23,6 @@ class YFTitleView: UIView {
     fileprivate lazy var titleLabelsArr : [UILabel] = [UILabel]()
     fileprivate var currentIndex :Int = 0
 
-    
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView(frame: self.bounds)
         scrollView.showsHorizontalScrollIndicator = false
@@ -195,6 +194,7 @@ extension YFTitleView {
 extension YFTitleView : YFContentViewDelegate{
     func contentView(_ contentView: YFContentView, targetIndex: Int) {
         adjustTitleLabel(targetIndex: targetIndex)
+
     }
     
     

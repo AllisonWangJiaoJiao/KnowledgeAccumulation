@@ -24,6 +24,10 @@ class YFPageCollectionView: UIView {
     fileprivate var layout: YFPageCollectionViewLayout
     fileprivate var style: YFPageStyle
     fileprivate var collectionView : UICollectionView!
+    fileprivate var pageControl : UIPageControl!
+    fileprivate var titleView : YFTitleView!
+    fileprivate var sourceIndexPath : IndexPath = IndexPath(item: 0, section: 0)
+
 
     
     init(frame: CGRect,titles:[String],isTitleInTop :Bool,layout:YFPageCollectionViewLayout,style:YFPageStyle) {
@@ -51,17 +55,17 @@ extension YFPageCollectionView{
         //创建titleView
         let titleY = isTitleInTop ? 0 :bounds.height - style.titleHeight
         let titleFrame = CGRect(x: 0, y: titleY, width: bounds.width, height: style.titleHeight)
-        let titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
+        titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
         addSubview(titleView)
         titleView.backgroundColor = UIColor.randomColor()
         
         //2.创建UIPageControl
         let pageControlHeight :CGFloat = 20
-        
         let pageControlY = isTitleInTop ? (bounds.height - pageControlHeight) : (style.titleHeight)
         let pageControlFrame = CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlHeight)
-        let pageControl = UIPageControl(frame: pageControlFrame)
+        pageControl = UIPageControl(frame: pageControlFrame)
         pageControl.numberOfPages = 4
+        pageControl.isEnabled  = false
         addSubview(pageControl)
         pageControl.backgroundColor = UIColor.randomColor()
         
@@ -72,7 +76,7 @@ extension YFPageCollectionView{
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
-        //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCell)
+        collectionView.delegate = self
         addSubview(collectionView)
         collectionView.backgroundColor = UIColor.randomColor()
         
@@ -99,7 +103,12 @@ extension YFPageCollectionView:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return dataSource?.pageCollectionView(self, numberOfItemsInSection: section) ?? 0
+        let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: section) ?? 0
+        
+        if section == 0 {
+            pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+        }
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -108,7 +117,40 @@ extension YFPageCollectionView:UICollectionViewDataSource{
     
 }
 
+//MARK:-UICollectionViewDelegate
+extension YFPageCollectionView : UICollectionViewDelegate{
+    //停止减速
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollViewEndScroll()
+    }
+    //2.没有减速
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollViewEndScroll()
+        }
+    }
 
+
+    fileprivate func scrollViewEndScroll() {
+        // 1.取出在屏幕中显示的Cell
+        let point = CGPoint(x: layout.sectionInset.left + 1 + collectionView.contentOffset.x, y: layout.sectionInset.top + 1)
+        guard  let indexPath = collectionView.indexPathForItem(at: point) else {return}
+        print(indexPath.item)
+        // 2.根据indexPath设置pageControll
+        pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
+
+
+        //3.判断组是否有发生改变
+        if sourceIndexPath.section != indexPath.section {
+            //3.1修改pageController的个数
+             let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
+            pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+            //3.2设置titleView位置
+            
+        }
+
+    }
+}
 
 
 

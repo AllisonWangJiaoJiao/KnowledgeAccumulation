@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         let layout = YFPageCollectionViewLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
         layout.minimumLineSpacing = 0
-        layout.minimumLineSpacing = 20
-        layout.cols = 7
-        layout.rows = 3
+        layout.minimumLineSpacing = 0
+//        layout.cols = 7
+//        layout.rows = 3
         let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: true, layout: layout, style: style)
         pageCollectionView.dataSource = self
         pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kEmoticonCell)

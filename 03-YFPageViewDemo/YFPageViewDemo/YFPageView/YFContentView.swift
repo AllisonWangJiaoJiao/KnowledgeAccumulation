@@ -121,6 +121,7 @@ extension YFContentView : UICollectionViewDelegate {
         contentEndScroll()
     }
     
+    
      private func contentEndScroll() {
         //获取滚动到的位置
         let currentIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)

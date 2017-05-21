@@ -29,6 +29,11 @@ class YFPageStyle {
     var bottomLineHeight : CGFloat = 2
 
     
+    //YFPageCollectionView
+    ///title的高度
+    var titleHeight : CGFloat = 44
+    
+    
     
     
 }

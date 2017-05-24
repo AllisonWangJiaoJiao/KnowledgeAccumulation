@@ -12,23 +12,11 @@
 		37CAB6331ED2B0D1003D0842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CAB6311ED2B0D1003D0842 /* Main.storyboard */; };
 		37CAB6351ED2B0D1003D0842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CAB6341ED2B0D1003D0842 /* Assets.xcassets */; };
 		37CAB6381ED2B0D1003D0842 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CAB6361ED2B0D1003D0842 /* LaunchScreen.storyboard */; };
-		37CAB65D1ED2B1B5003D0842 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6411ED2B1B5003D0842 /* CALayer+Addition.m */; };
-		37CAB65E1ED2B1B5003D0842 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6441ED2B1B5003D0842 /* NSArray+Log.m */; };
-		37CAB65F1ED2B1B5003D0842 /* NSAttributedString+WQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6461ED2B1B5003D0842 /* NSAttributedString+WQExtension.m */; };
-		37CAB6601ED2B1B5003D0842 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6481ED2B1B5003D0842 /* NSObject+CZRuntime.m */; };
-		37CAB6611ED2B1B5003D0842 /* NSString+WQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB64A1ED2B1B5003D0842 /* NSString+WQExtension.m */; };
-		37CAB6621ED2B1B5003D0842 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB64C1ED2B1B5003D0842 /* PlaceholderTextView.m */; };
-		37CAB6631ED2B1B5003D0842 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB64E1ED2B1B5003D0842 /* UIButton+CZAddition.m */; };
-		37CAB6641ED2B1B5003D0842 /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6501ED2B1B5003D0842 /* UIColor+CZAddition.m */; };
-		37CAB6651ED2B1B5003D0842 /* UIImage+WQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6521ED2B1B5003D0842 /* UIImage+WQExtension.m */; };
-		37CAB6661ED2B1B5003D0842 /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6541ED2B1B5003D0842 /* UILabel+CZAddition.m */; };
-		37CAB6671ED2B1B5003D0842 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6561ED2B1B5003D0842 /* UIScreen+CZAddition.m */; };
-		37CAB6681ED2B1B5003D0842 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB6581ED2B1B5003D0842 /* UIView+CZAddition.m */; };
-		37CAB6691ED2B1B5003D0842 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAB65A1ED2B1B5003D0842 /* UIViewController+CZAddition.m */; };
+		37E746911ED565DB00FFA9B5 /* TLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E7468F1ED565DB00FFA9B5 /* TLog.swift */; };
+		37E746931ED5660D00FFA9B5 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E746921ED5660D00FFA9B5 /* BaseWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3713FDFF1ED2ED7500EAE72D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		37CAB62A1ED2B0D1003D0842 /* WKWebProgressDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebProgressDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CAB62D1ED2B0D1003D0842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37CAB62F1ED2B0D1003D0842 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,33 +24,8 @@
 		37CAB6341ED2B0D1003D0842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37CAB6371ED2B0D1003D0842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37CAB6391ED2B0D1003D0842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37CAB6401ED2B1B5003D0842 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
-		37CAB6411ED2B1B5003D0842 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
-		37CAB6421ED2B1B5003D0842 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
-		37CAB6431ED2B1B5003D0842 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
-		37CAB6441ED2B1B5003D0842 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
-		37CAB6451ED2B1B5003D0842 /* NSAttributedString+WQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+WQExtension.h"; sourceTree = "<group>"; };
-		37CAB6461ED2B1B5003D0842 /* NSAttributedString+WQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+WQExtension.m"; sourceTree = "<group>"; };
-		37CAB6471ED2B1B5003D0842 /* NSObject+CZRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZRuntime.h"; sourceTree = "<group>"; };
-		37CAB6481ED2B1B5003D0842 /* NSObject+CZRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZRuntime.m"; sourceTree = "<group>"; };
-		37CAB6491ED2B1B5003D0842 /* NSString+WQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WQExtension.h"; sourceTree = "<group>"; };
-		37CAB64A1ED2B1B5003D0842 /* NSString+WQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WQExtension.m"; sourceTree = "<group>"; };
-		37CAB64B1ED2B1B5003D0842 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
-		37CAB64C1ED2B1B5003D0842 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
-		37CAB64D1ED2B1B5003D0842 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB64E1ED2B1B5003D0842 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
-		37CAB64F1ED2B1B5003D0842 /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB6501ED2B1B5003D0842 /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
-		37CAB6511ED2B1B5003D0842 /* UIImage+WQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WQExtension.h"; sourceTree = "<group>"; };
-		37CAB6521ED2B1B5003D0842 /* UIImage+WQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WQExtension.m"; sourceTree = "<group>"; };
-		37CAB6531ED2B1B5003D0842 /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB6541ED2B1B5003D0842 /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
-		37CAB6551ED2B1B5003D0842 /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB6561ED2B1B5003D0842 /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
-		37CAB6571ED2B1B5003D0842 /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB6581ED2B1B5003D0842 /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
-		37CAB6591ED2B1B5003D0842 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
-		37CAB65A1ED2B1B5003D0842 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
+		37E7468F1ED565DB00FFA9B5 /* TLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLog.swift; sourceTree = "<group>"; };
+		37E746921ED5660D00FFA9B5 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,50 +58,16 @@
 		37CAB62C1ED2B0D1003D0842 /* WKWebProgressDemo */ = {
 			isa = PBXGroup;
 			children = (
-				37CAB63F1ED2B1B5003D0842 /* Additions */,
+				37E7468F1ED565DB00FFA9B5 /* TLog.swift */,
+				37E746921ED5660D00FFA9B5 /* BaseWebViewController.swift */,
 				37CAB62D1ED2B0D1003D0842 /* AppDelegate.swift */,
 				37CAB62F1ED2B0D1003D0842 /* ViewController.swift */,
 				37CAB6311ED2B0D1003D0842 /* Main.storyboard */,
 				37CAB6341ED2B0D1003D0842 /* Assets.xcassets */,
 				37CAB6361ED2B0D1003D0842 /* LaunchScreen.storyboard */,
 				37CAB6391ED2B0D1003D0842 /* Info.plist */,
-				3713FDFF1ED2ED7500EAE72D /* Bridging-Header.h */,
 			);
 			path = WKWebProgressDemo;
-			sourceTree = "<group>";
-		};
-		37CAB63F1ED2B1B5003D0842 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				37CAB6401ED2B1B5003D0842 /* CALayer+Addition.h */,
-				37CAB6411ED2B1B5003D0842 /* CALayer+Addition.m */,
-				37CAB6421ED2B1B5003D0842 /* CZAdditions.h */,
-				37CAB6431ED2B1B5003D0842 /* NSArray+Log.h */,
-				37CAB6441ED2B1B5003D0842 /* NSArray+Log.m */,
-				37CAB6451ED2B1B5003D0842 /* NSAttributedString+WQExtension.h */,
-				37CAB6461ED2B1B5003D0842 /* NSAttributedString+WQExtension.m */,
-				37CAB6471ED2B1B5003D0842 /* NSObject+CZRuntime.h */,
-				37CAB6481ED2B1B5003D0842 /* NSObject+CZRuntime.m */,
-				37CAB6491ED2B1B5003D0842 /* NSString+WQExtension.h */,
-				37CAB64A1ED2B1B5003D0842 /* NSString+WQExtension.m */,
-				37CAB64B1ED2B1B5003D0842 /* PlaceholderTextView.h */,
-				37CAB64C1ED2B1B5003D0842 /* PlaceholderTextView.m */,
-				37CAB64D1ED2B1B5003D0842 /* UIButton+CZAddition.h */,
-				37CAB64E1ED2B1B5003D0842 /* UIButton+CZAddition.m */,
-				37CAB64F1ED2B1B5003D0842 /* UIColor+CZAddition.h */,
-				37CAB6501ED2B1B5003D0842 /* UIColor+CZAddition.m */,
-				37CAB6511ED2B1B5003D0842 /* UIImage+WQExtension.h */,
-				37CAB6521ED2B1B5003D0842 /* UIImage+WQExtension.m */,
-				37CAB6531ED2B1B5003D0842 /* UILabel+CZAddition.h */,
-				37CAB6541ED2B1B5003D0842 /* UILabel+CZAddition.m */,
-				37CAB6551ED2B1B5003D0842 /* UIScreen+CZAddition.h */,
-				37CAB6561ED2B1B5003D0842 /* UIScreen+CZAddition.m */,
-				37CAB6571ED2B1B5003D0842 /* UIView+CZAddition.h */,
-				37CAB6581ED2B1B5003D0842 /* UIView+CZAddition.m */,
-				37CAB6591ED2B1B5003D0842 /* UIViewController+CZAddition.h */,
-				37CAB65A1ED2B1B5003D0842 /* UIViewController+CZAddition.m */,
-			);
-			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,21 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37CAB6691ED2B1B5003D0842 /* UIViewController+CZAddition.m in Sources */,
-				37CAB6641ED2B1B5003D0842 /* UIColor+CZAddition.m in Sources */,
 				37CAB6301ED2B0D1003D0842 /* ViewController.swift in Sources */,
-				37CAB65E1ED2B1B5003D0842 /* NSArray+Log.m in Sources */,
-				37CAB65F1ED2B1B5003D0842 /* NSAttributedString+WQExtension.m in Sources */,
-				37CAB6651ED2B1B5003D0842 /* UIImage+WQExtension.m in Sources */,
-				37CAB6621ED2B1B5003D0842 /* PlaceholderTextView.m in Sources */,
-				37CAB6631ED2B1B5003D0842 /* UIButton+CZAddition.m in Sources */,
-				37CAB65D1ED2B1B5003D0842 /* CALayer+Addition.m in Sources */,
-				37CAB6611ED2B1B5003D0842 /* NSString+WQExtension.m in Sources */,
-				37CAB6661ED2B1B5003D0842 /* UILabel+CZAddition.m in Sources */,
 				37CAB62E1ED2B0D1003D0842 /* AppDelegate.swift in Sources */,
-				37CAB6671ED2B1B5003D0842 /* UIScreen+CZAddition.m in Sources */,
-				37CAB6601ED2B1B5003D0842 /* NSObject+CZRuntime.m in Sources */,
-				37CAB6681ED2B1B5003D0842 /* UIView+CZAddition.m in Sources */,
+				37E746931ED5660D00FFA9B5 /* BaseWebViewController.swift in Sources */,
+				37E746911ED565DB00FFA9B5 /* TLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +276,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WXLZ.WKWebProgressDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WKWebProgressDemo/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -372,7 +290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WXLZ.WKWebProgressDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WKWebProgressDemo/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        setupToolView()
+          stupUI()
     }
 
    
@@ -22,16 +22,25 @@ class ViewController: UIViewController {
 
 //MARK:-设置UI
 extension ViewController{
+    func stupUI()  {
+        
+        let btn = UIButton.init(type: .custom)
+        btn.frame = CGRect(x: 10, y:64, width: 100, height: 40)
+        btn.setTitle("跳转", for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(quitButClick), for: UIControlEvents.touchUpInside)
+        btn.layer.cornerRadius = 5
+        btn.layer.masksToBounds = true
+        btn.backgroundColor = #colorLiteral(red: 0.1379139125, green: 0.66092664, blue: 0.9643357396, alpha: 1)
+        view.addSubview(btn)
+        
+    }
     
-   fileprivate func setupToolView()  {
-        let tooBar = UIToolbar.init(frame: CGRect(x: 0, y: UIScreen.cz_screenHeight() - 40, width: UIScreen.cz_screenWidth(), height: 40))
-        view.addSubview(tooBar)
-    
-    let fixedSpace = UIBarButtonItem.init(barButtonSystemItem:.flexibleSpace, target: self, action: nil)
-    let backButton = UIBarButtonItem.init(barButtonSystemItem: .rewind, target: self, action: nil)
-    let forwardButton = UIBarButtonItem.init(barButtonSystemItem: .fastForward, target: self, action: nil)
-    let refreshButton = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: nil)
-    tooBar.setItems([fixedSpace,backButton,forwardButton,refreshButton], animated: true)
-
+    //退出提示框
+    func quitButClick() {
+        print("跳转")
+        
+        let webVC  = BaseWebViewController()
+        self.navigationController?.pushViewController(webVC, animated: true)
+        
     }
 }

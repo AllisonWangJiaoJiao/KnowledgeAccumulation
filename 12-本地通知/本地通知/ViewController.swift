@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         localNot.soundName = ""
         //设置图标右上角的数字(0代表不显示)
         localNot.applicationIconBadgeNumber = 10
-      
+        localNot.category = "selected"
         
         //2.发送本地通知
         //应用程序界别的操作

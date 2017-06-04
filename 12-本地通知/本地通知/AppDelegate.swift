@@ -70,8 +70,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func registerAuthor()  {
         
         if #available(iOS 8.0, *) {
+            //请求的权限
             let type = UIUserNotificationType.alert.rawValue | UIUserNotificationType.badge.rawValue | UIUserNotificationType.badge.rawValue
-            let sets = UIUserNotificationSettings(types: UIUserNotificationType(rawValue: type), categories: nil)
+            //1.创建异族操作行为
+            let category : UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+            //1.1设置组标志
+            category.identifier = "selected"
+            //1.2设置组里面的操作行为
+            let action1 = UIMutableUserNotificationAction()
+            //1.2.1设置操作行为的参数
+            action1.identifier = "网站"
+            action1.title = "手机"
+            //代表 用户在前台还是后台点击了这个动作
+            action1.activationMode = .foreground
+            //必须解锁之后,才会执行(如果是前台状态 那这个属性就会被忽略)
+            action1.isAuthenticationRequired = true
+            //是否是破坏性行为(使用一个红色的标志来标识这个按钮)
+            action1.isDestructive = true
+            
+            
+            //1.2设置组里面的操作行为
+            let action2 = UIMutableUserNotificationAction()
+            //1.2.2设置操作行为的参数
+            action2.identifier = "网站22"
+            action2.title = "手机22"
+            //代表 用户在前台还是后台点击了这个动作
+            action2.activationMode = .foreground
+            //必须解锁之后,才会执行(如果是前台状态 那这个属性就会被忽略)
+            action2.isAuthenticationRequired = true
+            //是否是破坏性行为(使用一个红色的标志来标识这个按钮)
+            action2.isDestructive = true
+            
+            
+            let actions : [UIUserNotificationAction] = [action1,action2]
+            category.setActions(actions, for: UIUserNotificationActionContext.default)
+            
+            
+            //附件操作行为
+            let categories: Set<UIUserNotificationCategory> = [category]
+            //设置对象
+            let sets = UIUserNotificationSettings(types: UIUserNotificationType(rawValue: type), categories: categories)
             UIApplication.shared.registerUserNotificationSettings(sets)
         }
     }

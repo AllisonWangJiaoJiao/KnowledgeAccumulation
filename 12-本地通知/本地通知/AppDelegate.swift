@@ -65,6 +65,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
+ 
+    
+    //completionHandler 系统提供的回调代码块,执行这个代码块,到时候,系统会采集一些信息
+    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, withResponseInfo responseInfo: [AnyHashable : Any], completionHandler: @escaping () -> Void) {
+        print(identifier)
+        completionHandler()
+    }
+    
+ 
     
     //注册通知授权
     func registerAuthor()  {

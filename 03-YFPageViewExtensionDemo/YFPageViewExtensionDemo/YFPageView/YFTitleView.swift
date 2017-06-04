@@ -152,10 +152,6 @@ extension YFTitleView {
             bottomLine.frame.origin.x = targetLabel.frame.origin.x
             bottomLine.frame.size.width = targetLabel.frame.width
         }
-        
-        
-        
-
     }
     
     fileprivate func adjustTitleLabel(targetIndex : Int) {
@@ -222,7 +218,6 @@ extension YFTitleView : YFContentViewDelegate{
             bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
             bottomLine.frame.size.width = sourceLabel.frame.width + deltaW * progress
         }
-        
     }
 
 }

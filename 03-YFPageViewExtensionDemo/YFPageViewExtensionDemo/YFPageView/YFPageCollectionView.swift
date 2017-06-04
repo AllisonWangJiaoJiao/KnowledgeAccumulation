@@ -146,7 +146,7 @@ extension YFPageCollectionView : UICollectionViewDelegate{
              let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
             //3.2设置titleView位置
-            
+            titleView.delegate = self
         }
 
     }
@@ -154,7 +154,10 @@ extension YFPageCollectionView : UICollectionViewDelegate{
 
 
 
-
+extension YFPageCollectionView : YFContentViewDelegate{
+    func contentView(_ contentView: YFContentView, targetIndex: Int) {
+        
+}
 
 
 

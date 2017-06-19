@@ -7,29 +7,47 @@
 //
 
 import UIKit
+import CoreImage
 
 class GenerateQRCodeVC: UIViewController {
+    
+    @IBOutlet weak var qrCodeImgView: UIImageView!
 
+    @IBOutlet weak var inputTV: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // 1.创建二维码滤镜
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        // 1.1回复滤镜默认设置
+        filter?.setDefaults()
+        
+        //2.设置滤镜输入数据
+        let data = "123123".data(using: String.Encoding.utf8)
+        filter?.setValue(data, forKey: "inputMessage")
+        
+        //3.从二维码滤镜里面,获取结果图片
+        var image = filter?.outputImage
+        
+        //
+        let transform = CGAffineTransform(scaleX: 20, y: 20)
+        image =  image?.applying(transform)
+        
+        //3.1图片处理
+        let resultImage = UIImage(ciImage: image!)
+        print(resultImage.size)
+        //4.显示图片
+        qrCodeImgView.image = resultImage
+        
+        
+        
     }
-    */
+
 
 }

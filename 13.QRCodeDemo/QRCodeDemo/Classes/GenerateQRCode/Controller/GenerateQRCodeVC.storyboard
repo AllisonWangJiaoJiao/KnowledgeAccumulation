@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="21z-ma-rdi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,12 +18,40 @@
                         <viewControllerLayoutGuide type="bottom" id="yLp-Ro-9D8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DfO-DR-TI6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-pr-76g">
+                                <rect key="frame" x="112" y="114" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="e9i-ul-4cX"/>
+                                    <constraint firstAttribute="width" constant="150" id="gw7-ke-nPR"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hTT-1f-fg4">
+                                <rect key="frame" x="67" y="314" width="240" height="130"/>
+                                <color key="backgroundColor" red="1" green="0.70423719620000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="kAT-1T-8JF"/>
+                                    <constraint firstAttribute="width" constant="240" id="wqN-FS-tr6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dTU-pr-76g" firstAttribute="centerX" secondItem="DfO-DR-TI6" secondAttribute="centerX" id="7FH-pB-WB3"/>
+                            <constraint firstItem="hTT-1f-fg4" firstAttribute="top" secondItem="dTU-pr-76g" secondAttribute="bottom" constant="50" id="Kgi-XC-tx7"/>
+                            <constraint firstItem="dTU-pr-76g" firstAttribute="top" secondItem="YEg-2O-Ngo" secondAttribute="bottom" constant="50" id="X8H-ci-TvM"/>
+                            <constraint firstItem="hTT-1f-fg4" firstAttribute="centerX" secondItem="dTU-pr-76g" secondAttribute="centerX" id="eUD-r7-ATc"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <connections>
+                        <outlet property="inputTV" destination="hTT-1f-fg4" id="iJp-t7-io8"/>
+                        <outlet property="qrCodeImgView" destination="dTU-pr-76g" id="k7P-K0-eeU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXB-UX-V6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

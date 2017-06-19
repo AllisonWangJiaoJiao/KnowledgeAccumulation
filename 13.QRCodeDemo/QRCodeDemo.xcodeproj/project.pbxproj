@@ -11,6 +11,12 @@
 		37635DE61EF7DF1900ADCDA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37635DE51EF7DF1900ADCDA7 /* Assets.xcassets */; };
 		37635DE91EF7DF1900ADCDA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37635DE71EF7DF1900ADCDA7 /* LaunchScreen.storyboard */; };
 		37635E021EF7E1E400ADCDA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37635DF81EF7E1E400ADCDA7 /* AppDelegate.swift */; };
+		37EEC8051EF8055F00BF14EC /* GenerateQRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EEC8041EF8055F00BF14EC /* GenerateQRCodeVC.swift */; };
+		37EEC80F1EF8061A00BF14EC /* RecognitionQRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EEC80E1EF8061A00BF14EC /* RecognitionQRCodeVC.swift */; };
+		37EEC8111EF8062B00BF14EC /* ScanQRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EEC8101EF8062B00BF14EC /* ScanQRCodeVC.swift */; };
+		37EEC8131EF809D500BF14EC /* GenerateQRCodeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EEC8121EF809D500BF14EC /* GenerateQRCodeVC.storyboard */; };
+		37EEC8151EF80A1100BF14EC /* RecognitionQRCodeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EEC8141EF80A1100BF14EC /* RecognitionQRCodeVC.storyboard */; };
+		37EEC8171EF80A2B00BF14EC /* ScanQRCodeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EEC8161EF80A2B00BF14EC /* ScanQRCodeVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		37635DE81EF7DF1900ADCDA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37635DF81EF7E1E400ADCDA7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37635DF91EF7E1E400ADCDA7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37EEC8041EF8055F00BF14EC /* GenerateQRCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateQRCodeVC.swift; sourceTree = "<group>"; };
+		37EEC80E1EF8061A00BF14EC /* RecognitionQRCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognitionQRCodeVC.swift; sourceTree = "<group>"; };
+		37EEC8101EF8062B00BF14EC /* ScanQRCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQRCodeVC.swift; sourceTree = "<group>"; };
+		37EEC8121EF809D500BF14EC /* GenerateQRCodeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GenerateQRCodeVC.storyboard; sourceTree = "<group>"; };
+		37EEC8141EF80A1100BF14EC /* RecognitionQRCodeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecognitionQRCodeVC.storyboard; sourceTree = "<group>"; };
+		37EEC8161EF80A2B00BF14EC /* ScanQRCodeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScanQRCodeVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				37635DF21EF7E1E400ADCDA7 /* GenerateQRCode */,
+				37EEC8061EF805E700BF14EC /* RecognitionQRCode */,
+				37EEC80A1EF805ED00BF14EC /* ScanQRCode */,
 				37635DF61EF7E1E400ADCDA7 /* Other */,
-				37635DFA1EF7E1E400ADCDA7 /* RecognitionQRCode */,
-				37635DFE1EF7E1E400ADCDA7 /* ScanQRCode */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -92,6 +104,8 @@
 		37635DF31EF7E1E400ADCDA7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37EEC8041EF8055F00BF14EC /* GenerateQRCodeVC.swift */,
+				37EEC8121EF809D500BF14EC /* GenerateQRCodeVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,62 +141,66 @@
 			path = System;
 			sourceTree = "<group>";
 		};
-		37635DFA1EF7E1E400ADCDA7 /* RecognitionQRCode */ = {
+		37EEC8061EF805E700BF14EC /* RecognitionQRCode */ = {
 			isa = PBXGroup;
 			children = (
-				37635DFB1EF7E1E400ADCDA7 /* Controller */,
-				37635DFC1EF7E1E400ADCDA7 /* Model */,
-				37635DFD1EF7E1E400ADCDA7 /* View */,
+				37EEC8071EF805E700BF14EC /* Controller */,
+				37EEC8081EF805E700BF14EC /* Model */,
+				37EEC8091EF805E700BF14EC /* View */,
 			);
 			path = RecognitionQRCode;
 			sourceTree = "<group>";
 		};
-		37635DFB1EF7E1E400ADCDA7 /* Controller */ = {
+		37EEC8071EF805E700BF14EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37EEC80E1EF8061A00BF14EC /* RecognitionQRCodeVC.swift */,
+				37EEC8141EF80A1100BF14EC /* RecognitionQRCodeVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		37635DFC1EF7E1E400ADCDA7 /* Model */ = {
+		37EEC8081EF805E700BF14EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		37635DFD1EF7E1E400ADCDA7 /* View */ = {
+		37EEC8091EF805E700BF14EC /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		37635DFE1EF7E1E400ADCDA7 /* ScanQRCode */ = {
+		37EEC80A1EF805ED00BF14EC /* ScanQRCode */ = {
 			isa = PBXGroup;
 			children = (
-				37635DFF1EF7E1E400ADCDA7 /* Controller */,
-				37635E001EF7E1E400ADCDA7 /* Model */,
-				37635E011EF7E1E400ADCDA7 /* View */,
+				37EEC80B1EF805ED00BF14EC /* Controller */,
+				37EEC80C1EF805ED00BF14EC /* Model */,
+				37EEC80D1EF805ED00BF14EC /* View */,
 			);
 			path = ScanQRCode;
 			sourceTree = "<group>";
 		};
-		37635DFF1EF7E1E400ADCDA7 /* Controller */ = {
+		37EEC80B1EF805ED00BF14EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37EEC8101EF8062B00BF14EC /* ScanQRCodeVC.swift */,
+				37EEC8161EF80A2B00BF14EC /* ScanQRCodeVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		37635E001EF7E1E400ADCDA7 /* Model */ = {
+		37EEC80C1EF805ED00BF14EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		37635E011EF7E1E400ADCDA7 /* View */ = {
+		37EEC80D1EF805ED00BF14EC /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -249,8 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EEC8151EF80A1100BF14EC /* RecognitionQRCodeVC.storyboard in Resources */,
+				37EEC8131EF809D500BF14EC /* GenerateQRCodeVC.storyboard in Resources */,
 				37635DE91EF7DF1900ADCDA7 /* LaunchScreen.storyboard in Resources */,
 				37635DE61EF7DF1900ADCDA7 /* Assets.xcassets in Resources */,
+				37EEC8171EF80A2B00BF14EC /* ScanQRCodeVC.storyboard in Resources */,
 				37635DE41EF7DF1900ADCDA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37635E021EF7E1E400ADCDA7 /* AppDelegate.swift in Sources */,
+				37EEC8111EF8062B00BF14EC /* ScanQRCodeVC.swift in Sources */,
+				37EEC8051EF8055F00BF14EC /* GenerateQRCodeVC.swift in Sources */,
+				37EEC80F1EF8061A00BF14EC /* RecognitionQRCodeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

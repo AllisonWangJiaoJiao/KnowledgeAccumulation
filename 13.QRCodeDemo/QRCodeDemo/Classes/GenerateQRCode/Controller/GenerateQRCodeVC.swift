@@ -62,14 +62,13 @@ class GenerateQRCodeVC: UIViewController {
     }
     
     func getNewImage(sourceImage:UIImage ,center:UIImage) -> UIImage {
-        
+      
         let size = sourceImage.size
-        
         //1.开启图形上下文
         UIGraphicsBeginImageContext(size)
         //2.绘制大图片
         sourceImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        
+ 
         //3.绘制小图片
         let width : CGFloat = 80
         let height : CGFloat = 80

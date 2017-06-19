@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="684-Af-bU8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode2" translatesAutoresizingMaskIntoConstraints="NO" id="684-Af-bU8">
                                 <rect key="frame" x="67" y="124" width="240" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="DDF-wK-RLi"/>
@@ -60,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="qrcode" width="647" height="338"/>
+        <image name="qrcode2" width="1740" height="824"/>
     </resources>
 </document>

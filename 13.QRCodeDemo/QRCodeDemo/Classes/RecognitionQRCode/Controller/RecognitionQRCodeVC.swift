@@ -32,14 +32,13 @@ class RecognitionQRCodeVC: UIViewController {
         let features = dector?.features(in: imageCI!)
         for feature in features! {
             let qrFeature = feature as!CIQRCodeFeature
-            print(qrFeature.messageString)
+            print(qrFeature.messageString ?? "")
             result.append(qrFeature.messageString!)
             resultImage = drawFrame(image: resultImage!, feature: qrFeature)
             sourceImageView.image = resultImage
             
         }
         let alertVC = UIAlertController(title: "结果", message: result.description, preferredStyle: UIAlertControllerStyle.alert)
-        
         //添加关闭行为
         let action = UIAlertAction(title: "关闭", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
            self.dismiss(animated: true, completion: nil)

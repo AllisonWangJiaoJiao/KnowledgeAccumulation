@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gF1-oq-7lj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,16 +18,67 @@
                         <viewControllerLayoutGuide type="bottom" id="EWk-P5-F0b"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uqy-Ev-Qw3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sQ-Wy-uuu">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-hJ-8EK" userLabel="RectangleView" customClass="BaseView" customModule="QRCodeDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCodeScanLine" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-WY-KYv">
+                                                <rect key="frame" x="0.0" y="140" width="200" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="RGF-Hp-VTb"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.43351094130000001" green="0.85567517810000004" blue="0.89281056120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="CYG-WY-KYv" firstAttribute="width" secondItem="ZH5-hJ-8EK" secondAttribute="width" id="32T-T1-C6e"/>
+                                            <constraint firstAttribute="trailing" secondItem="CYG-WY-KYv" secondAttribute="trailing" id="WMN-Ag-iXv"/>
+                                            <constraint firstItem="CYG-WY-KYv" firstAttribute="leading" secondItem="ZH5-hJ-8EK" secondAttribute="leading" id="kZ6-s2-KVM"/>
+                                            <constraint firstAttribute="bottom" secondItem="CYG-WY-KYv" secondAttribute="bottom" constant="50" id="pQs-vj-26w"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.70423719620000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6ra-uG-FmJ"/>
+                                    <constraint firstItem="ZH5-hJ-8EK" firstAttribute="height" secondItem="0sQ-Wy-uuu" secondAttribute="height" id="L3s-k4-Iib"/>
+                                    <constraint firstAttribute="height" constant="200" id="Q44-ps-fnr"/>
+                                    <constraint firstItem="ZH5-hJ-8EK" firstAttribute="width" secondItem="0sQ-Wy-uuu" secondAttribute="width" id="WNk-ss-mwj"/>
+                                    <constraint firstItem="ZH5-hJ-8EK" firstAttribute="centerY" secondItem="0sQ-Wy-uuu" secondAttribute="centerY" id="p5g-CQ-Fjz"/>
+                                    <constraint firstItem="ZH5-hJ-8EK" firstAttribute="centerX" secondItem="0sQ-Wy-uuu" secondAttribute="centerX" id="zaE-zf-bLn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sQ-Wy-uuu" firstAttribute="centerX" secondItem="Uqy-Ev-Qw3" secondAttribute="centerX" id="gmu-8y-Bmm"/>
+                            <constraint firstItem="0sQ-Wy-uuu" firstAttribute="centerY" secondItem="Uqy-Ev-Qw3" secondAttribute="centerY" id="nEy-B3-aBn"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <connections>
+                        <outlet property="toBottom" destination="pQs-vj-26w" id="Qap-fP-rJI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzt-66-Oc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="542"/>
+            <point key="canvasLocation" x="1056.8" y="541.97901049475263"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="QRCodeScanLine" width="320" height="12"/>
+    </resources>
 </document>

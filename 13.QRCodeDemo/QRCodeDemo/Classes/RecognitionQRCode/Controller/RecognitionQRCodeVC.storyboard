@@ -60,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="qrcode2" width="1740" height="824"/>
+        <image name="qrcode2" width="984" height="546"/>
     </resources>
 </document>

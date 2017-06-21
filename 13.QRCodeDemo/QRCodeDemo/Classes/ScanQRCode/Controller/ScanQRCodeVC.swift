@@ -93,37 +93,41 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
                 print(qrCodeObj.stringValue)
                 print("二维码的四个角:\(qrCodeObj.corners)")
                 //qrCodeObj.corners 代表二维码的四个角,但是,需要借助视频预览图层,转换为我们可以用的坐标.
-               
+               drawFrame(qrCodeObj: qrCodeObj)
             }
         }
     }
     
     
     func drawFrame(qrCodeObj:AVMetadataMachineReadableCodeObject) -> () {
-        guard let corners = qrCodeObj.corners else {return}
+        guard let cornersArr = qrCodeObj.corners else {return}
         
         //1.借助一个图形层,来回执
         let shapLayer = CAShapeLayer()
-        
         //2.根据四个点,创建一个路径
         let path = UIBezierPath()
-        for corner in corners {
+        var index = 0
+        
+        for corner in cornersArr {
+            let pointDic = corner as! CFDictionary
+            //let point = CGPoint.zero
+            //CGPoint(dictionaryRepresentation: pointDic)
+            let point = CGPoint.init(dictionaryRepresentation: pointDic)
             
-            let pointDic = corners as! CFDictionary
-            var point = CGPoint.zero
-            
-            //CGPointMakeWithDictionaryRepresentation(pointDic, &point)
-            
-            var index = 0
-            //CGPointMakeWithDictionaryRepresentation(pointDic, &point)
-            
+            //第一个点
+            if index == 0 {
+                path.move(to: point!)
+            }else{
+                path.addLine(to: point!)
+            }
+            index += 1
         }
         
-        
         //3.给图形图层的路径赋值,代表图层展示怎样的形状
+        shapLayer.path = path.cgPath
         
         //4.直接添加图形图层到需要展示的图层
-        
+        layer?.addSublayer(shapLayer)
         
         
         

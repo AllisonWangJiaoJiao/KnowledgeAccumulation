@@ -107,7 +107,7 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
         let shapLayer = CAShapeLayer()
         shapLayer.fillColor = UIColor.clear.cgColor
         shapLayer.strokeColor = UIColor.red.cgColor
-        shapLayer.lineWidth = 6
+        shapLayer.lineWidth = 3
         
         //2.根据四个点,创建一个路径
         let path = UIBezierPath()
@@ -115,17 +115,18 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
         
         for corner in cornersArr {
             let pointDic = corner as! CFDictionary
-            //let point = CGPoint.zero
-            let point = CGPoint.init(dictionaryRepresentation: pointDic)
+            var point = CGPoint.zero
+            point = CGPoint.init(dictionaryRepresentation: pointDic)!
             
             //第一个点
             if index == 0 {
-                path.move(to: point!)
+                path.move(to: point)
             }else{
-                path.addLine(to: point!)
+                path.addLine(to: point)
             }
             index += 1
         }
+        path.close()
         
         //3.给图形图层的路径赋值,代表图层展示怎样的形状
         shapLayer.path = path.cgPath

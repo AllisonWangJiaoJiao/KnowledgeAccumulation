@@ -83,6 +83,7 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         print(metadataObjects)
         
+        removeFrameLayer()
         for obj in metadataObjects {
             if (obj as AnyObject).isKind(of: AVMetadataMachineReadableCodeObject.self) {
                 
@@ -104,6 +105,10 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
         
         //1.借助一个图形层,来回执
         let shapLayer = CAShapeLayer()
+        shapLayer.fillColor = UIColor.clear.cgColor
+        shapLayer.strokeColor = UIColor.red.cgColor
+        shapLayer.lineWidth = 6
+        
         //2.根据四个点,创建一个路径
         let path = UIBezierPath()
         var index = 0
@@ -111,7 +116,6 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
         for corner in cornersArr {
             let pointDic = corner as! CFDictionary
             //let point = CGPoint.zero
-            //CGPoint(dictionaryRepresentation: pointDic)
             let point = CGPoint.init(dictionaryRepresentation: pointDic)
             
             //第一个点
@@ -128,9 +132,16 @@ extension ScanQRCodeVC : AVCaptureMetadataOutputObjectsDelegate{
         
         //4.直接添加图形图层到需要展示的图层
         layer?.addSublayer(shapLayer)
+    }
+    
+    func removeFrameLayer() -> () {
+        guard let subLayers = layer?.sublayers else {return}
         
-        
-        
+        for subLayer in subLayers {
+            if subLayer.isKind(of: CAShapeLayer.self) {
+                subLayer.removeFromSuperlayer()
+            }
+        }
     }
     
 }

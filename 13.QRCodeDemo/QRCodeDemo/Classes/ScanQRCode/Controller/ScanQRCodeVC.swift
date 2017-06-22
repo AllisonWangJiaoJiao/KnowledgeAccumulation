@@ -50,7 +50,6 @@ class ScanQRCodeVC: UIViewController {
         //2.1设置结果处理的代理
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        
         //3.创建会话,连接输入和输出
         session = AVCaptureSession()
         if session!.canAddInput(input) && session!.canAddOutput(output) {
@@ -65,6 +64,17 @@ class ScanQRCodeVC: UIViewController {
         //[AVMetadataObjectTypeQRCode]
         output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
         
+        //设置扫码的兴趣区域
+        //CGRectMake(0, 0, 1, 1)
+        //0,0 右上角 
+        let bounds = UIScreen.main.bounds
+        let x :CGFloat = scanBackView.frame.origin.x / bounds.size.width
+        let y :CGFloat = scanBackView.frame.origin.y / bounds.size.height
+        let width : CGFloat = scanBackView.frame.size.width / bounds.size.width
+        let height : CGFloat = scanBackView.frame.size.height / bounds.size.height
+        output.rectOfInterest = CGRect(x: y, y: x, width: height, height: width)
+        //output.rectOfInterest = CGRect(x: x, y: y, width: width, height: height)
+
         //3.2添加视频预览图层(让用户可以看到界面)(不是不许添加的)
         let layer  = AVCaptureVideoPreviewLayer(session: session)
         layer?.frame = view.layer.bounds

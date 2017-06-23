@@ -27,15 +27,13 @@ class ScanQRCodeVC: UIViewController {
         startScanAnimation()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        startScan()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+         startScan()
     }
     
     func startScan() -> () {
-        
-//        QRCodeTools.shareInstance.scanQRCode(inView: view) { (result:[String]) in
-//            print(result)
-//        }
+
         QRCodeTools.shareInstance.setRectInterest(orignRect: scanBackView.frame)
         QRCodeTools.shareInstance.scanQRCode(inView: view, isDrawFrame: true) { (result:[String]) in
             print(result)

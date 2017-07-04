@@ -12,6 +12,11 @@
 		372862AD1F0BD7A4005B77E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372862AC1F0BD7A4005B77E6 /* Assets.xcassets */; };
 		372862B01F0BD7A4005B77E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372862AE1F0BD7A4005B77E6 /* Main.storyboard */; };
 		372862B91F0BDA1D005B77E6 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862B81F0BDA1D005B77E6 /* ServerManager.swift */; };
+		372862C11F0BDCC6005B77E6 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862BC1F0BDCC6005B77E6 /* ysocket.swift */; };
+		372862C21F0BDCC6005B77E6 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 372862BD1F0BDCC6005B77E6 /* ytcpsocket.c */; };
+		372862C31F0BDCC6005B77E6 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862BE1F0BDCC6005B77E6 /* ytcpsocket.swift */; };
+		372862C41F0BDCC6005B77E6 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 372862BF1F0BDCC6005B77E6 /* yudpsocket.c */; };
+		372862C51F0BDCC6005B77E6 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862C01F0BDCC6005B77E6 /* yudpsocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		372862AF1F0BD7A4005B77E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		372862B11F0BD7A4005B77E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		372862B81F0BDA1D005B77E6 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		372862BC1F0BDCC6005B77E6 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		372862BD1F0BDCC6005B77E6 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		372862BE1F0BDCC6005B77E6 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		372862BF1F0BDCC6005B77E6 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		372862C01F0BDCC6005B77E6 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +77,22 @@
 		372862B71F0BD9FE005B77E6 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				372862BB1F0BDCC6005B77E6 /* ysocket */,
 				372862B81F0BDA1D005B77E6 /* ServerManager.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		372862BB1F0BDCC6005B77E6 /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				372862BC1F0BDCC6005B77E6 /* ysocket.swift */,
+				372862BD1F0BDCC6005B77E6 /* ytcpsocket.c */,
+				372862BE1F0BDCC6005B77E6 /* ytcpsocket.swift */,
+				372862BF1F0BDCC6005B77E6 /* yudpsocket.c */,
+				372862C01F0BDCC6005B77E6 /* yudpsocket.swift */,
+			);
+			path = ysocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +166,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372862C31F0BDCC6005B77E6 /* ytcpsocket.swift in Sources */,
 				372862AB1F0BD7A4005B77E6 /* ViewController.swift in Sources */,
 				372862B91F0BDA1D005B77E6 /* ServerManager.swift in Sources */,
+				372862C11F0BDCC6005B77E6 /* ysocket.swift in Sources */,
 				372862A91F0BD7A4005B77E6 /* AppDelegate.swift in Sources */,
+				372862C21F0BDCC6005B77E6 /* ytcpsocket.c in Sources */,
+				372862C51F0BDCC6005B77E6 /* yudpsocket.swift in Sources */,
+				372862C41F0BDCC6005B77E6 /* yudpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +328,7 @@
 				372862B61F0BD7A4005B77E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

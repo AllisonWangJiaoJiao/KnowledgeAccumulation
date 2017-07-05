@@ -29,9 +29,9 @@ extension ServerManager {
         DispatchQueue.global().async {
             while self.isServerRunning {
                 if let client = self.serverSocket.accept(){
-                    print("接受到一个客服端的连接")
-                    self.handleClient(client)
-                    
+                    DispatchQueue.global().async {
+                        self.handleClient(client)
+                    }
                 }
             }
         }

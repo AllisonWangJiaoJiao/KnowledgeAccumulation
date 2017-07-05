@@ -27,9 +27,10 @@ extension HYSocket {
         
     }
    
-    func sendMsg(str:String) {
+    func sendMsg(data:Data) {
         
-        tcpClient.send(str: str)
+        //tcpClient.send(str: str)
+        tcpClient.send(data: data)
     }
     
     

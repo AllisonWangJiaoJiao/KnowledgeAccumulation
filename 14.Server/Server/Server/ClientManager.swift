@@ -27,11 +27,25 @@ extension ClientManager {
         isClientConnected = true
         while true {
             
-            if let msg = tcpClient.read(20){
+            if let lMsg = tcpClient.read(4){
+                //1.读取长度的data
+                let msgData = Data(bytes: lMsg, count: 4)
+                var length : Int = 0
+                    (msgData as NSData).getBytes(&length, length: 4)
                 
-                let msgData = Data(bytes: msg, count: 20)
-                let msgStr = String(data: msgData, encoding: String.Encoding.utf8)
-                print(msgStr ?? "123")
+                //2.读取类型
+                guard let typeMsg = tcpClient.read(2) else {return}
+                let typeData = Data(bytes: typeMsg, count: 2)
+                var type : Int = 0
+                (typeData as NSData).getBytes(&type, length: 2)
+                print("type:\(type)")
+                
+                //2.根据长度,读取真实消息
+                guard let msg = tcpClient.read(length) else {return}
+                let data = Data(bytes: msg, count: length)
+                let string = String(data: data, encoding: String.Encoding.utf8)
+                print(string ?? "默认")
+                
                 
             }else{
                 isClientConnected = false

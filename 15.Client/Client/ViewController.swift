@@ -21,13 +21,36 @@ class ViewController: UIViewController {
     
     }
     
+    /*
+     礼物
+     广播
+     进入房间
+     离开房间
+     文本
+     */
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let message = "你好啊, 李银河"
-        let data = message.data(using: String.Encoding.utf8)
-        print(data?.count)
+        //1.获取消息的长度
+        let message = "你好啊, 王小二....."
+        let data = message.data(using: String.Encoding.utf8)!
+        var length = data.count
+        print(length)
         
-        socket.sendMsg(str: message)
+        
+        //2.将消息长度写入到data
+        let headerData = Data(bytes: &length, count: 4)
+        
+        //3.消息类型
+        var type = 2
+        let typeData = Data(bytes: &type, count: 2)
+        
+        
+        
+        //3.发送消息
+        //消息格式: 1.消息长度 + 2.消息类型 + 3.真实消息
+        let totalData = headerData + typeData + data
+        socket.sendMsg(data: totalData)
     }
 
   

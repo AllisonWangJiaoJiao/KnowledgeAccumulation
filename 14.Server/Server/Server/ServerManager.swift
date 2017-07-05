@@ -13,6 +13,8 @@ class ServerManager: NSObject {
     fileprivate lazy var serverSocket : TCPServer = TCPServer.init(addr: "0.0.0.0", port: 7878)
     
     fileprivate var isServerRunning :Bool = false
+    
+    fileprivate var clientMgrsArr : [ClientManager] = [ClientManager]()
 }
 
 extension ServerManager {
@@ -28,6 +30,8 @@ extension ServerManager {
             while self.isServerRunning {
                 if let client = self.serverSocket.accept(){
                     print("接受到一个客服端的连接")
+                    self.handleClient(client)
+                    
                 }
             }
         }
@@ -46,3 +50,22 @@ extension ServerManager {
     
     
 }
+
+extension ServerManager {
+    
+    fileprivate func handleClient(_ client : TCPClient ){
+        //1.用一个ClientManager管理TCPClient
+        let mgr = ClientManager(tcpClient: client)
+        
+        //2.保存客户端
+        clientMgrsArr.append(mgr)
+        
+        //3.用client开始接受消息
+        mgr.startReadMsg()
+        
+    }
+    
+}
+
+
+

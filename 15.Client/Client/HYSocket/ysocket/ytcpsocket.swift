@@ -92,6 +92,7 @@ open class TCPClient:YSocket{
     * send string
     * return success or fail with message
     */
+    @discardableResult
     open func send(str s:String)->(Bool,String){
         if let fd:Int32=self.fd{
             let sendsize:Int32=c_ytcpsocket_send(fd, buff: s, len: Int32(strlen(s)))

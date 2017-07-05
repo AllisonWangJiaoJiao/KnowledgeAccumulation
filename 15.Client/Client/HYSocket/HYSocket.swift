@@ -25,7 +25,12 @@ extension HYSocket {
         //设置超时时间
       return  tcpClient.connect(timeout: 5).0
         
-        
     }
+   
+    func sendMsg(str:String) {
+        
+        tcpClient.send(str: str)
+    }
+    
     
 }

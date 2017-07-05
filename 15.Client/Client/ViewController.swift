@@ -20,6 +20,15 @@ class ViewController: UIViewController {
         }
     
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let message = "你好啊, 李银河"
+        let data = message.data(using: String.Encoding.utf8)
+        print(data?.count)
+        
+        socket.sendMsg(str: message)
+    }
 
   
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131EC30BD60B979823FEDA40 /* Pods_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC827CF049B5B5BE0C390DD /* Pods_Client.framework */; };
+		372818451F1222B900B5B277 /* Immessage.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818441F1222B900B5B277 /* Immessage.proto.swift */; };
 		372862D31F0BDF11005B77E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862D21F0BDF11005B77E6 /* AppDelegate.swift */; };
 		372862D51F0BDF11005B77E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862D41F0BDF11005B77E6 /* ViewController.swift */; };
 		372862D81F0BDF11005B77E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372862D61F0BDF11005B77E6 /* Main.storyboard */; };
@@ -18,9 +20,11 @@
 		372862EE1F0BDF76005B77E6 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 372862E91F0BDF76005B77E6 /* yudpsocket.c */; };
 		372862EF1F0BDF76005B77E6 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862EA1F0BDF76005B77E6 /* yudpsocket.swift */; };
 		372862F11F0BDF98005B77E6 /* HYSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862F01F0BDF98005B77E6 /* HYSocket.swift */; };
+		37303EBF1F0D33EE00C1F8C0 /* IMMeaasge.proto in Resources */ = {isa = PBXBuildFile; fileRef = 37303EBE1F0D33EE00C1F8C0 /* IMMeaasge.proto */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372818441F1222B900B5B277 /* Immessage.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immessage.proto.swift; sourceTree = "<group>"; };
 		372862CF1F0BDF11005B77E6 /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372862D21F0BDF11005B77E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372862D41F0BDF11005B77E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,10 @@
 		372862E91F0BDF76005B77E6 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		372862EA1F0BDF76005B77E6 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		372862F01F0BDF98005B77E6 /* HYSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSocket.swift; sourceTree = "<group>"; };
+		37303EBE1F0D33EE00C1F8C0 /* IMMeaasge.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IMMeaasge.proto; sourceTree = "<group>"; };
+		3CC827CF049B5B5BE0C390DD /* Pods_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60F1C368F80F4A2A8EC9F796 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
+		7A4C3A365F07366CEE81F875 /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131EC30BD60B979823FEDA40 /* Pods_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,8 @@
 			children = (
 				372862D11F0BDF11005B77E6 /* Client */,
 				372862D01F0BDF11005B77E6 /* Products */,
+				77DCF5FBAA8EBAA323ABB176 /* Pods */,
+				72073CB01ACEC02488AB3C94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +84,8 @@
 				372862D91F0BDF11005B77E6 /* Assets.xcassets */,
 				372862DB1F0BDF11005B77E6 /* LaunchScreen.storyboard */,
 				372862DE1F0BDF11005B77E6 /* Info.plist */,
+				372818441F1222B900B5B277 /* Immessage.proto.swift */,
+				37303EBE1F0D33EE00C1F8C0 /* IMMeaasge.proto */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -98,6 +111,23 @@
 			path = ysocket;
 			sourceTree = "<group>";
 		};
+		72073CB01ACEC02488AB3C94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CC827CF049B5B5BE0C390DD /* Pods_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77DCF5FBAA8EBAA323ABB176 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A4C3A365F07366CEE81F875 /* Pods-Client.debug.xcconfig */,
+				60F1C368F80F4A2A8EC9F796 /* Pods-Client.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 372862E11F0BDF11005B77E6 /* Build configuration list for PBXNativeTarget "Client" */;
 			buildPhases = (
+				5AD1680639B1CDFCD7F3F535 /* [CP] Check Pods Manifest.lock */,
 				372862CB1F0BDF11005B77E6 /* Sources */,
 				372862CC1F0BDF11005B77E6 /* Frameworks */,
 				372862CD1F0BDF11005B77E6 /* Resources */,
+				1F61F602FD83060936165C7D /* [CP] Embed Pods Frameworks */,
+				2FDC5D811806A65C3C95A81A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,11 +192,60 @@
 			files = (
 				372862DD1F0BDF11005B77E6 /* LaunchScreen.storyboard in Resources */,
 				372862DA1F0BDF11005B77E6 /* Assets.xcassets in Resources */,
+				37303EBF1F0D33EE00C1F8C0 /* IMMeaasge.proto in Resources */,
 				372862D81F0BDF11005B77E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F61F602FD83060936165C7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Client/Pods-Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FDC5D811806A65C3C95A81A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Client/Pods-Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AD1680639B1CDFCD7F3F535 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		372862CB1F0BDF11005B77E6 /* Sources */ = {
@@ -178,6 +260,7 @@
 				372862D31F0BDF11005B77E6 /* AppDelegate.swift in Sources */,
 				372862ED1F0BDF76005B77E6 /* ytcpsocket.swift in Sources */,
 				372862EF1F0BDF76005B77E6 /* yudpsocket.swift in Sources */,
+				372818451F1222B900B5B277 /* Immessage.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +383,7 @@
 		};
 		372862E21F0BDF11005B77E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A4C3A365F07366CEE81F875 /* Pods-Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Client/Info.plist;
@@ -312,6 +396,7 @@
 		};
 		372862E31F0BDF11005B77E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60F1C368F80F4A2A8EC9F796 /* Pods-Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Client/Info.plist;

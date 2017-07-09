@@ -1,11 +1,5 @@
 syntax = "proto2";
 
-message Person {
-    required int64 id = 1;
-    required string name = 2;
-    optional string email = 3;
-}
-
 message UserInfo {
     required string name = 1;
     required int64 level = 2;
@@ -19,6 +13,6 @@ message TextMessage {
 message GiftMessage {
     required UserInfo user = 1;
     required string giftname = 2;
-    required string gifgURL = 3;
+    required string giftURL = 3;
     required string giftCount = 4;
 }

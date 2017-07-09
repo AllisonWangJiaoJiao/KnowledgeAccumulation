@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		131EC30BD60B979823FEDA40 /* Pods_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC827CF049B5B5BE0C390DD /* Pods_Client.framework */; };
-		372818451F1222B900B5B277 /* Immessage.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372818441F1222B900B5B277 /* Immessage.proto.swift */; };
+		3718488A1F12293A00779FCF /* Immeaasge.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371848891F12293A00779FCF /* Immeaasge.proto.swift */; };
 		372862D31F0BDF11005B77E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862D21F0BDF11005B77E6 /* AppDelegate.swift */; };
 		372862D51F0BDF11005B77E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862D41F0BDF11005B77E6 /* ViewController.swift */; };
 		372862D81F0BDF11005B77E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372862D61F0BDF11005B77E6 /* Main.storyboard */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		372818441F1222B900B5B277 /* Immessage.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immessage.proto.swift; sourceTree = "<group>"; };
+		371848891F12293A00779FCF /* Immeaasge.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immeaasge.proto.swift; sourceTree = "<group>"; };
 		372862CF1F0BDF11005B77E6 /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372862D21F0BDF11005B77E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372862D41F0BDF11005B77E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				372862D91F0BDF11005B77E6 /* Assets.xcassets */,
 				372862DB1F0BDF11005B77E6 /* LaunchScreen.storyboard */,
 				372862DE1F0BDF11005B77E6 /* Info.plist */,
-				372818441F1222B900B5B277 /* Immessage.proto.swift */,
+				371848891F12293A00779FCF /* Immeaasge.proto.swift */,
 				37303EBE1F0D33EE00C1F8C0 /* IMMeaasge.proto */,
 			);
 			path = Client;
@@ -259,8 +259,8 @@
 				372862EC1F0BDF76005B77E6 /* ytcpsocket.c in Sources */,
 				372862D31F0BDF11005B77E6 /* AppDelegate.swift in Sources */,
 				372862ED1F0BDF76005B77E6 /* ytcpsocket.swift in Sources */,
+				3718488A1F12293A00779FCF /* Immeaasge.proto.swift in Sources */,
 				372862EF1F0BDF76005B77E6 /* yudpsocket.swift in Sources */,
-				372818451F1222B900B5B277 /* Immessage.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,8 +43,19 @@ extension ClientManager {
                 //2.根据长度,读取真实消息
                 guard let msg = tcpClient.read(length) else {return}
                 let data = Data(bytes: msg, count: length)
-                let string = String(data: data, encoding: String.Encoding.utf8)
-                print(string ?? "默认")
+                switch type {
+                case 0 , 1:
+                    //parseFrom 反序列化(解析)
+                  let user =  try! UserInfo.parseFrom(data: data)
+                    print(user.name)
+                    print(user.level)
+                default:
+                    print("未知类型")
+                }
+                
+                
+                
+                
                 
                 
             }else{

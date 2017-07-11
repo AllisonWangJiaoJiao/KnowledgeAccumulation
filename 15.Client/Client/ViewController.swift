@@ -22,11 +22,10 @@ class ViewController: UIViewController {
     }
     
     /*
-     礼物
-     广播
-     进入房间
-     离开房间
-     文本
+     进入房间 =0
+     离开房间 =1
+     文本 =2
+     礼物 =3
      */
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
 //        print(length)
         
         let userInfo = UserInfo.Builder()
-        userInfo.name = "why\(arc4random())"
+        userInfo.name = "why123"
         userInfo.level = 20
         let msgData = (try! userInfo.build()).data()
         
@@ -49,7 +48,7 @@ class ViewController: UIViewController {
        
         
         //3.消息类型
-        var type = 2
+        var type = 0
         let typeData = Data(bytes: &type, count: 2)
         
         

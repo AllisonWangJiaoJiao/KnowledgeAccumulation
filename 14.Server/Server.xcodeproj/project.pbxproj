@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3718488D1F122DCE00779FCF /* Immeaasge.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718488C1F122DCE00779FCF /* Immeaasge.proto.swift */; };
 		372862A91F0BD7A4005B77E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862A81F0BD7A4005B77E6 /* AppDelegate.swift */; };
 		372862AB1F0BD7A4005B77E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372862AA1F0BD7A4005B77E6 /* ViewController.swift */; };
 		372862AD1F0BD7A4005B77E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372862AC1F0BD7A4005B77E6 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3718488C1F122DCE00779FCF /* Immeaasge.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immeaasge.proto.swift; sourceTree = "<group>"; };
 		372862A51F0BD7A4005B77E6 /* Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Server.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372862A81F0BD7A4005B77E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372862AA1F0BD7A4005B77E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				372862B71F0BD9FE005B77E6 /* Server */,
 				372862A81F0BD7A4005B77E6 /* AppDelegate.swift */,
 				372862AA1F0BD7A4005B77E6 /* ViewController.swift */,
+				3718488C1F122DCE00779FCF /* Immeaasge.proto.swift */,
 				372862AC1F0BD7A4005B77E6 /* Assets.xcassets */,
 				372862AE1F0BD7A4005B77E6 /* Main.storyboard */,
 				372862B11F0BD7A4005B77E6 /* Info.plist */,
@@ -253,6 +256,7 @@
 				372862C51F0BDCC6005B77E6 /* yudpsocket.swift in Sources */,
 				372862C41F0BDCC6005B77E6 /* yudpsocket.c in Sources */,
 				37303EBB1F0D11D800C1F8C0 /* ClientManager.swift in Sources */,
+				3718488D1F122DCE00779FCF /* Immeaasge.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
         if socket.connectServer() {
             print("连接上服务器")
+            socket.startReadMsg()
         }
     
     }
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
 //        print(length)
         
         let userInfo = UserInfo.Builder()
-        userInfo.name = "why123"
+        userInfo.name = "why\(arc4random() % 100)"
         userInfo.level = 20
         let msgData = (try! userInfo.build()).data()
         

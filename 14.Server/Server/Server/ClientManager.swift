@@ -8,9 +8,16 @@
 
 import Cocoa
 
+protocol ClientManagerDelegate :class{
+    //发送消息到其它客户端
+    func sendMsgToClient(_ data: Data)
+}
+
 class ClientManager: NSObject {
     
     var tcpClient : TCPClient
+    
+    weak var delegate : ClientManagerDelegate?
     
     fileprivate var isClientConnected : Bool = false
     
@@ -29,9 +36,9 @@ extension ClientManager {
             
             if let lMsg = tcpClient.read(4){
                 //1.读取长度的data
-                let msgData = Data(bytes: lMsg, count: 4)
+                let headData = Data(bytes: lMsg, count: 4)
                 var length : Int = 0
-                    (msgData as NSData).getBytes(&length, length: 4)
+                    (headData as NSData).getBytes(&length, length: 4)
                 
                 //2.读取类型
                 guard let typeMsg = tcpClient.read(2) else {return}
@@ -42,7 +49,9 @@ extension ClientManager {
                 
                 //2.根据长度,读取真实消息
                 guard let msg = tcpClient.read(length) else {return}
-                let data = Data(bytes: msg, count: length)
+                let msgData = Data(bytes: msg, count: length)
+                
+                /*
                 switch type {
                 case 0 , 1:
                     //parseFrom 反序列化(解析)
@@ -52,11 +61,10 @@ extension ClientManager {
                 default:
                     print("未知类型")
                 }
-                
-                
-                
-                
-                
+                */
+                let totalData = headData + typeData + msgData
+                delegate?.sendMsgToClient(totalData)
+          
                 
             }else{
                 isClientConnected = false

@@ -69,6 +69,7 @@ extension ClientManager {
             }else{
                 isClientConnected = false
                 print("客户端断开连接")
+                _ = tcpClient.close()
             }
 
         }

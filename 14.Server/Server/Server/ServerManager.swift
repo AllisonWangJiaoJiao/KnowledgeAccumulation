@@ -34,13 +34,7 @@ extension ServerManager {
                     }
                 }
             }
-        }
-        
-        //3.
-        
-        
-        
-        
+        } 
     }
     
     

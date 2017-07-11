@@ -18,8 +18,12 @@ class ViewController: UIViewController {
         if socket.connectServer() {
             print("连接上服务器")
             socket.startReadMsg()
+//            socket.delegate = self
         }
     
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     /*
@@ -29,37 +33,23 @@ class ViewController: UIViewController {
      礼物 =3
      */
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        //1.获取消息的长度
-//        let message = "你好啊, 王小二....."
-//        let data = message.data(using: String.Encoding.utf8)!
-//        var length = data.count
-//        print(length)
-        
-        let userInfo = UserInfo.Builder()
-        userInfo.name = "why\(arc4random() % 100)"
-        userInfo.level = 20
-        let msgData = (try! userInfo.build()).data()
-        
-        
-        //2.将消息长度写入到data
-        var length = msgData.count
-        let headerData = Data(bytes: &length, count: 4)
-       
-        
-        //3.消息类型
-        var type = 0
-        let typeData = Data(bytes: &type, count: 2)
-        
-        
-        
-        //3.发送消息
-        //消息格式: 1.消息长度 + 2.消息类型 + 3.真实消息
-        let totalData = headerData + typeData + msgData
-        socket.sendMsg(data: totalData)
+    
+    @IBAction func joinRoom(_ sender: UIButton) {
+        socket.sendJoinRoom()
+    }
+    
+    @IBAction func leaveRoom(_ sender: UIButton) {
+        socket.sendLeaveRoom()
+    }
+    
+    @IBAction func sendText(_ sender: UIButton) {
+        socket.sendTextMsg(message: "这是一个文本消息")
     }
 
+    @IBAction func sendGift(_ sender: UIButton) {
+        socket.sendGiftMsg(giftname: "火锅", giftURL: "http://www.baidu.com", giftCount: "100")
+    }
+    
   
 }
 

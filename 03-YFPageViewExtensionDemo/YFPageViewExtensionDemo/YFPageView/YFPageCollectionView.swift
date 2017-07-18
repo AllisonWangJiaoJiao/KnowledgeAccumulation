@@ -29,7 +29,6 @@ class YFPageCollectionView: UIView {
     fileprivate var sourceIndexPath : IndexPath = IndexPath(item: 0, section: 0)
 
 
-    
     init(frame: CGRect,titles:[String],isTitleInTop :Bool,layout:YFPageCollectionViewLayout,style:YFPageStyle) {
         self.titlesArr = titles
         self.isTitleInTop = isTitleInTop
@@ -69,7 +68,7 @@ extension YFPageCollectionView{
         addSubview(pageControl)
         pageControl.backgroundColor = UIColor.randomColor()
         
-        //创建UICollectionView
+        //3.创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlHeight)
         collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
@@ -85,6 +84,10 @@ extension YFPageCollectionView{
 
 // MARK:- 对外暴露的方法
 extension YFPageCollectionView {
+    //swift中允许方法重载 OC中没有
+    // func register(_ cell AnyClass?)
+    // func register(_ nib : UINib)
+    // 有_会报错  去掉_不会报错(有外部参数,作为方法的一部分)
     func register(cell : AnyClass?, identifier : String) {
         collectionView.register(cell, forCellWithReuseIdentifier: identifier)
     }
@@ -146,7 +149,7 @@ extension YFPageCollectionView : UICollectionViewDelegate{
              let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
             //3.2设置titleView位置
-            titleView.delegate = self
+            
         }
 
     }
@@ -154,10 +157,6 @@ extension YFPageCollectionView : UICollectionViewDelegate{
 
 
 
-extension YFPageCollectionView : YFContentViewDelegate{
-    func contentView(_ contentView: YFContentView, targetIndex: Int) {
-        
-}
 
 
 

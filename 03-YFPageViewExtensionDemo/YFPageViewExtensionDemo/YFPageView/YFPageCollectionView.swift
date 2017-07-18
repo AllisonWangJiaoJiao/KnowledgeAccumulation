@@ -60,13 +60,13 @@ extension YFPageCollectionView{
         
         //2.创建UIPageControl
         let pageControlHeight :CGFloat = 20
-        let pageControlY = isTitleInTop ? (bounds.height - pageControlHeight) : (style.titleHeight)
+        let pageControlY = isTitleInTop ? (bounds.height - pageControlHeight) : (bounds.height - pageControlHeight - style.titleHeight)
         let pageControlFrame = CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlHeight)
         pageControl = UIPageControl(frame: pageControlFrame)
         pageControl.numberOfPages = 4
         pageControl.isEnabled  = false
         addSubview(pageControl)
-        pageControl.backgroundColor = UIColor.randomColor()
+        pageControl.backgroundColor = UIColor.red
         
         //3.创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0

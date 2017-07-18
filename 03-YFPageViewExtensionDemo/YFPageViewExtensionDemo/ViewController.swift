@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 0
 //        layout.cols = 7
 //        layout.rows = 3
-        let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: true, layout: layout, style: style)
+        let pageCollectionView = YFPageCollectionView(frame: pageFrame, titles: titlesArr, isTitleInTop: false, layout: layout, style: style)
         pageCollectionView.dataSource = self
         pageCollectionView.register(cell: UICollectionViewCell.self, identifier: kEmoticonCell)
 

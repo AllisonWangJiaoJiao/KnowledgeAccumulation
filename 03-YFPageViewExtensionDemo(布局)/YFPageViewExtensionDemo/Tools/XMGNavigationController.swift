@@ -13,12 +13,24 @@ class XMGNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //通过运行时,打印手势中所有属性
+        /*
+        var count : UInt32 = 0
+        let ivarsArr = class_copyIvarList(UIGestureRecognizer.self, &count)
+        for i in 0..<count {
+            
+            let nameP = ivar_getName(ivarsArr?[Int(i)])!
+            let name = String(cString: nameP)
+            print(name)
+            
+        }
+       */
+        
         // 1.使用运行时, 打印手势中所有属性
         guard let targets = interactivePopGestureRecognizer!.value(forKey:  "_targets") as? [NSObject] else { return }
         let targetObjc = targets[0]
         let target = targetObjc.value(forKey: "target")
         let action = Selector(("handleNavigationTransition:"))
-        
         let panGes = UIPanGestureRecognizer(target: target, action: action)
         view.addGestureRecognizer(panGes)
     }

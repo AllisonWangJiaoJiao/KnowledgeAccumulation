@@ -40,7 +40,13 @@ extension ViewController : YFPageCollectionViewDataSource{
     }
     
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(arc4random_uniform(30)) + 25
+//        return Int(arc4random_uniform(30)) + 25
+        if section == 0 {
+            return 20
+        }else {
+            return 14
+        }
+        
     }
     
     func pageCollectionView(_ pageCollectionView: YFPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

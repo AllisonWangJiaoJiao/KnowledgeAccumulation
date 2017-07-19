@@ -56,6 +56,7 @@ extension YFPageCollectionView{
         let titleFrame = CGRect(x: 0, y: titleY, width: bounds.width, height: style.titleHeight)
         titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
         addSubview(titleView)
+        titleView.delegate = self
         titleView.backgroundColor = UIColor.randomColor()
         
         //2.创建UIPageControl
@@ -139,23 +140,39 @@ extension YFPageCollectionView : UICollectionViewDelegate{
         let point = CGPoint(x: layout.sectionInset.left + 1 + collectionView.contentOffset.x, y: layout.sectionInset.top + 1)
         guard  let indexPath = collectionView.indexPathForItem(at: point) else {return}
         print(indexPath.item)
-        // 2.根据indexPath设置pageControll
-        pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
+   
 
-
-        //3.判断组是否有发生改变
+        //2.判断组是否有发生改变
         if sourceIndexPath.section != indexPath.section {
-            //3.1修改pageController的个数
+            //2.1修改pageController的个数
              let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
-            //3.2设置titleView位置
+            //2.2设置titleView位置
+            // 3.2.设置titleView位置
+            titleView.setTitleWithProgress(1.0, sourceIndex: sourceIndexPath.section, targetIndex: indexPath.section)
             
+            // 2.3.记录最新indexPath
+            sourceIndexPath = indexPath
         }
+        
+        // 3.根据indexPath设置pageControll
+        pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
+
 
     }
 }
 
+// MARK:- YFTitleViewDelegate
+extension YFPageCollectionView : YFTitleViewDelegate {
+    func titleView(_ titleView: YFTitleView, targetIndex: Int) {
+        let indexPath = IndexPath(item: 0, section: targetIndex)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+        collectionView.contentOffset.x -= layout.sectionInset.left
+        
+        scrollViewEndScroll()
 
+    }
+}
 
 
 

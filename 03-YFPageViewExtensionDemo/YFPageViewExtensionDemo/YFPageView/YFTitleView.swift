@@ -223,7 +223,39 @@ extension YFTitleView : YFContentViewDelegate{
 }
 
 
+// MARK:- 对外暴露的方法
+extension YFTitleView {
+    
+    func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        //1.取出label
+        let sourceLabel = titleLabelsArr[sourceIndex]
+        let targetLabel = titleLabelsArr[targetIndex]
+       
+        
+        //2.颜色渐变
+        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
+        let selectRGB = style.selectColor.getRGB()
+        let normalRGB = style.normalColor.getRGB()
+        
+        sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        
+        
+        // 4.记录最新的index
+        currentIndex = targetIndex
+        
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveTotalW = targetLabel.frame.width - sourceLabel.frame.width
+        // 5.计算滚动的范围差值
+        if style.isShowBottomLine {
+            bottomLine.frame.size.width = sourceLabel.frame.width + moveTotalW * progress
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + moveTotalX * progress
+        }
 
+    }
+    
+    
+}
 
 
 

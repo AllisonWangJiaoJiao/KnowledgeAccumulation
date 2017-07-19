@@ -23,6 +23,10 @@
 		378F4AC71F1F0BE900B11347 /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AC21F1F0BE900B11347 /* Emitterable.swift */; };
 		378F4AC81F1F0BE900B11347 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AC31F1F0BE900B11347 /* NibLoadable.swift */; };
 		378F4AC91F1F0BE900B11347 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AC41F1F0BE900B11347 /* UIColor-Extension.swift */; };
+		378F4ACC1F1F0D8500B11347 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4ACA1F1F0D8500B11347 /* RoomViewController.swift */; };
+		378F4ACD1F1F0D8500B11347 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378F4ACB1F1F0D8500B11347 /* RoomViewController.xib */; };
+		378F4AD01F1F0DBC00B11347 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4ACF1F1F0DBC00B11347 /* Const.swift */; };
+		378F4AD61F1F33F900B11347 /* XMGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AD51F1F33F900B11347 /* XMGNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		378F4AC21F1F0BE900B11347 /* Emitterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
 		378F4AC31F1F0BE900B11347 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		378F4AC41F1F0BE900B11347 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		378F4ACA1F1F0D8500B11347 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		378F4ACB1F1F0D8500B11347 /* RoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
+		378F4ACF1F1F0DBC00B11347 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		378F4AD51F1F33F900B11347 /* XMGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMGNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,8 @@
 			children = (
 				378F4ABE1F1F0BE900B11347 /* AppDelegate.swift */,
 				378F4ABF1F1F0BE900B11347 /* ViewController.swift */,
+				378F4ACA1F1F0D8500B11347 /* RoomViewController.swift */,
+				378F4ACB1F1F0D8500B11347 /* RoomViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,8 +132,10 @@
 		378F4AC01F1F0BE900B11347 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				378F4ACE1F1F0DBC00B11347 /* Common */,
 				378F4AC11F1F0BE900B11347 /* Protocol */,
 				378F4AC41F1F0BE900B11347 /* UIColor-Extension.swift */,
+				378F4AD51F1F33F900B11347 /* XMGNavigationController.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -135,6 +147,14 @@
 				378F4AC31F1F0BE900B11347 /* NibLoadable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		378F4ACE1F1F0DBC00B11347 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				378F4ACF1F1F0DBC00B11347 /* Const.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378F4ACD1F1F0D8500B11347 /* RoomViewController.xib in Resources */,
 				3728630E1ED17CA400F0A099 /* LaunchScreen.storyboard in Resources */,
 				3728630B1ED17CA400F0A099 /* Assets.xcassets in Resources */,
 				378F4AB71F1F079000B11347 /* ChatToolsView.xib in Resources */,
@@ -212,7 +233,9 @@
 			files = (
 				378F4AC51F1F0BE900B11347 /* AppDelegate.swift in Sources */,
 				378F4AC91F1F0BE900B11347 /* UIColor-Extension.swift in Sources */,
+				378F4ACC1F1F0D8500B11347 /* RoomViewController.swift in Sources */,
 				3728631F1ED17D4000F0A099 /* YFPageCollectionView.swift in Sources */,
+				378F4AD61F1F33F900B11347 /* XMGNavigationController.swift in Sources */,
 				3728631A1ED17CF500F0A099 /* YFContentView.swift in Sources */,
 				3728631B1ED17CF500F0A099 /* YFPageStyle.swift in Sources */,
 				378F4AB61F1F079000B11347 /* ChatToolsView.swift in Sources */,
@@ -222,6 +245,7 @@
 				378F4AC71F1F0BE900B11347 /* Emitterable.swift in Sources */,
 				3728631D1ED17CF500F0A099 /* YFTitleView.swift in Sources */,
 				372863231ED1854C00F0A099 /* YFPageCollectionViewLayout.swift in Sources */,
+				378F4AD01F1F0DBC00B11347 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

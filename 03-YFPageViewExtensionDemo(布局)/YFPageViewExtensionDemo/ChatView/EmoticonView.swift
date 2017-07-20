@@ -51,7 +51,7 @@ extension EmoticonView {
 extension EmoticonView : YFPageCollectionViewDataSource {
   
     func numberOfSections(in pageCollectionView: YFPageCollectionView) -> Int {
-        return  20
+        return  2
     }
     
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {

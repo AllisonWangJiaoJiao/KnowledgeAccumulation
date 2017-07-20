@@ -30,13 +30,16 @@ extension YFPageCollectionViewLayout {
         
 
         //1.获取一共有多少组
-          let sectionCount = collectionView!.numberOfSections
+        let sectionCount = collectionView!.numberOfSections
+        print(sectionCount)
         
         //2.获取每组有多少个Item
         var prePageCount : Int = 0
         
         for i in 0..<sectionCount {
             let itemCount = collectionView!.numberOfItems(inSection: i)
+            print(itemCount)
+            
             for j in 0..<itemCount {
                 ///2.1获取cell对应的indexPath
                 let indexPath = IndexPath(item: j, section: i)

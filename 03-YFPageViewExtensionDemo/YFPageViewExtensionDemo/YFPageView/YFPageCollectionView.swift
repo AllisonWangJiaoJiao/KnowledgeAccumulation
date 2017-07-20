@@ -103,7 +103,7 @@ extension YFPageCollectionView {
 extension YFPageCollectionView:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-         return dataSource?.numberOfSections(in: self) ?? 0
+        return dataSource?.numberOfSections(in: self) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -112,6 +112,7 @@ extension YFPageCollectionView:UICollectionViewDataSource{
         if section == 0 {
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
         }
+        
         return itemCount
     }
     
@@ -138,27 +139,26 @@ extension YFPageCollectionView : UICollectionViewDelegate{
     fileprivate func scrollViewEndScroll() {
         // 1.取出在屏幕中显示的Cell
         let point = CGPoint(x: layout.sectionInset.left + 1 + collectionView.contentOffset.x, y: layout.sectionInset.top + 1)
-        guard  let indexPath = collectionView.indexPathForItem(at: point) else {return}
-        print(indexPath.item)
+        guard let indexPath = collectionView.indexPathForItem(at: point) else { return }
    
 
-        //2.判断组是否有发生改变
+        // 2.判断分组是否有发生改变
         if sourceIndexPath.section != indexPath.section {
-            //2.1修改pageController的个数
-             let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
+            // 3.1.修改pageControl的个数
+            let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: indexPath.section) ?? 0
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
-            //2.2设置titleView位置
+            
             // 3.2.设置titleView位置
+            
             titleView.setTitleWithProgress(1.0, sourceIndex: sourceIndexPath.section, targetIndex: indexPath.section)
             
-            // 2.3.记录最新indexPath
+            // 3.3.记录最新indexPath
             sourceIndexPath = indexPath
+            
         }
         
-        // 3.根据indexPath设置pageControll
+        // 3.根据indexPath设置pageControl
         pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
-
-
     }
 }
 

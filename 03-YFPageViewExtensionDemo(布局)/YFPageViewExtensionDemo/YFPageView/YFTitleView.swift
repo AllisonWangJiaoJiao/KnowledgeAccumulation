@@ -195,9 +195,7 @@ extension YFTitleView : YFContentViewDelegate{
     
     
     func contentView(_ contentView: YFContentView, targetIndex: Int, progress: CGFloat) {
-    
-        print(progress)
-    
+
         //1.取出label
         let sourceLabel = titleLabelsArr[currentIndex]
         let targetLabel = titleLabelsArr[targetIndex]
@@ -222,11 +220,11 @@ extension YFTitleView : YFContentViewDelegate{
 
 }
 
-
 // MARK:- 对外暴露的方法
 extension YFTitleView {
     
     func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+  
         //1.取出label
         let sourceLabel = titleLabelsArr[sourceIndex]
         let targetLabel = titleLabelsArr[targetIndex]

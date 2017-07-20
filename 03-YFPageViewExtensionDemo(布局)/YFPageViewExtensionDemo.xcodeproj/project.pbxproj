@@ -27,6 +27,9 @@
 		378F4ACD1F1F0D8500B11347 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378F4ACB1F1F0D8500B11347 /* RoomViewController.xib */; };
 		378F4AD01F1F0DBC00B11347 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4ACF1F1F0DBC00B11347 /* Const.swift */; };
 		378F4AD61F1F33F900B11347 /* XMGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AD51F1F33F900B11347 /* XMGNavigationController.swift */; };
+		378F4AD81F1F52A100B11347 /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AD71F1F52A100B11347 /* EmoticonView.swift */; };
+		378F4ADB1F1F55F600B11347 /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F4AD91F1F55F600B11347 /* EmoticonViewCell.swift */; };
+		378F4ADC1F1F55F600B11347 /* EmoticonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378F4ADA1F1F55F600B11347 /* EmoticonViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		378F4ACB1F1F0D8500B11347 /* RoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		378F4ACF1F1F0DBC00B11347 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		378F4AD51F1F33F900B11347 /* XMGNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMGNavigationController.swift; sourceTree = "<group>"; };
+		378F4AD71F1F52A100B11347 /* EmoticonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
+		378F4AD91F1F55F600B11347 /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		378F4ADA1F1F55F600B11347 /* EmoticonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 		378F4AB31F1F078200B11347 /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				378F4AD71F1F52A100B11347 /* EmoticonView.swift */,
+				378F4AD91F1F55F600B11347 /* EmoticonViewCell.swift */,
+				378F4ADA1F1F55F600B11347 /* EmoticonViewCell.xib */,
 				378F4AB41F1F079000B11347 /* ChatToolsView.swift */,
 				378F4AB51F1F079000B11347 /* ChatToolsView.xib */,
 			);
@@ -218,6 +227,7 @@
 			files = (
 				378F4ACD1F1F0D8500B11347 /* RoomViewController.xib in Resources */,
 				3728630E1ED17CA400F0A099 /* LaunchScreen.storyboard in Resources */,
+				378F4ADC1F1F55F600B11347 /* EmoticonViewCell.xib in Resources */,
 				3728630B1ED17CA400F0A099 /* Assets.xcassets in Resources */,
 				378F4AB71F1F079000B11347 /* ChatToolsView.xib in Resources */,
 				372863091ED17CA400F0A099 /* Main.storyboard in Resources */,
@@ -237,6 +247,8 @@
 				3728631F1ED17D4000F0A099 /* YFPageCollectionView.swift in Sources */,
 				378F4AD61F1F33F900B11347 /* XMGNavigationController.swift in Sources */,
 				3728631A1ED17CF500F0A099 /* YFContentView.swift in Sources */,
+				378F4ADB1F1F55F600B11347 /* EmoticonViewCell.swift in Sources */,
+				378F4AD81F1F52A100B11347 /* EmoticonView.swift in Sources */,
 				3728631B1ED17CF500F0A099 /* YFPageStyle.swift in Sources */,
 				378F4AB61F1F079000B11347 /* ChatToolsView.swift in Sources */,
 				378F4AC61F1F0BE900B11347 /* ViewController.swift in Sources */,

@@ -18,7 +18,7 @@ class YFPageStyle {
     var fontSize : CGFloat = 15
     var titleFont : UIFont = UIFont.systemFont(ofSize: 15.0)
 
-    //是否滚动
+    //是否是滚动的title
     var isScrollEnable : Bool = false
     //间距
     var itemMargin : CGFloat = 20

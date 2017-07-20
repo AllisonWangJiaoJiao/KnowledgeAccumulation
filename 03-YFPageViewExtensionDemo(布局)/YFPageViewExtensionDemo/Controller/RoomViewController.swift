@@ -22,7 +22,7 @@ class RoomViewController: UIViewController, Emitterable {
         super.viewDidLoad()
         
         setupUI()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
@@ -35,6 +35,8 @@ class RoomViewController: UIViewController, Emitterable {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    
 }
 
 
@@ -54,6 +56,7 @@ extension RoomViewController {
     }
     
     fileprivate func setupBottomView() {
+        print(view.bounds)
         chatToolsView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolsViewHeight)
         chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         chatToolsView.delegate = self
@@ -77,6 +80,7 @@ extension RoomViewController {
         switch sender.tag {
         case 0:
             chatToolsView.inputTextField.becomeFirstResponder()
+              print("点击了聊天")
         case 1:
             print("点击了分享")
         case 2:

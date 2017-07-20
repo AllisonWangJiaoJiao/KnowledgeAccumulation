@@ -17,7 +17,7 @@ class ChatToolsView: UIView, NibLoadable {
     weak var delegate : ChatToolsViewDelegate?
     
     fileprivate lazy var emoticonBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
- 
+    fileprivate lazy var emoticonView : EmoticonView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250))
     
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var sendMsgBtn: UIButton!
@@ -77,12 +77,11 @@ extension ChatToolsView {
 extension ChatToolsView {
     @objc fileprivate func emoticonBtnClick(_ btn : UIButton) {
         btn.isSelected = !btn.isSelected
-        
         // 切换键盘
-//        let range = inputTextField.selectedTextRange
-//        inputTextField.resignFirstResponder()
-//        inputTextField.inputView = inputTextField.inputView == nil ? emoticonView : nil
-//        inputTextField.becomeFirstResponder()
-//        inputTextField.selectedTextRange = range
+        let range = inputTextField.selectedTextRange
+        inputTextField.resignFirstResponder()
+        inputTextField.inputView = inputTextField.inputView == nil ? emoticonView : nil
+        inputTextField.becomeFirstResponder()
+        inputTextField.selectedTextRange = range
     }
 }

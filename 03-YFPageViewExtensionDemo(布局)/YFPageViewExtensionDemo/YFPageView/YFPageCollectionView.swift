@@ -51,32 +51,33 @@ class YFPageCollectionView: UIView {
 
 extension YFPageCollectionView{
     fileprivate func setupUI(){
-        //创建titleView
-        let titleY = isTitleInTop ? 0 :bounds.height - style.titleHeight
+        
+        // 1.创建titleView
+        let titleY = isTitleInTop ? 0 : bounds.height - style.titleHeight
         let titleFrame = CGRect(x: 0, y: titleY, width: bounds.width, height: style.titleHeight)
         titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
         addSubview(titleView)
         titleView.delegate = self
         titleView.backgroundColor = UIColor.randomColor()
         
-        //2.创建UIPageControl
-        let pageControlHeight :CGFloat = 20
+        // 2.创建UIPageControl
+        let pageControlHeight : CGFloat = 20
         let pageControlY = isTitleInTop ? (bounds.height - pageControlHeight) : (bounds.height - pageControlHeight - style.titleHeight)
         let pageControlFrame = CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlHeight)
         pageControl = UIPageControl(frame: pageControlFrame)
         pageControl.numberOfPages = 4
-        pageControl.isEnabled  = false
+        pageControl.isEnabled = false
         addSubview(pageControl)
-        pageControl.backgroundColor = UIColor.red
+        pageControl.backgroundColor = UIColor.randomColor()
         
-        //3.创建UICollectionView
+        // 3.创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlHeight)
         collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
         addSubview(collectionView)
         collectionView.backgroundColor = UIColor.randomColor()
         
@@ -89,6 +90,7 @@ extension YFPageCollectionView {
     // func register(_ cell AnyClass?)
     // func register(_ nib : UINib)
     // 有_会报错  去掉_不会报错(有外部参数,作为方法的一部分)
+    
     func register(cell : AnyClass?, identifier : String) {
         collectionView.register(cell, forCellWithReuseIdentifier: identifier)
     }
@@ -103,8 +105,9 @@ extension YFPageCollectionView {
 extension YFPageCollectionView:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-         return dataSource?.numberOfSections(in: self) ?? 0
+        return dataSource?.numberOfSections(in: self) ?? 0
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemCount = dataSource?.pageCollectionView(self, numberOfItemsInSection: section) ?? 0

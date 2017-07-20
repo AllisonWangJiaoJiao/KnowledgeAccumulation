@@ -227,6 +227,7 @@ extension YFTitleView : YFContentViewDelegate{
 extension YFTitleView {
     
     func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        
         //1.取出label
         let sourceLabel = titleLabelsArr[sourceIndex]
         let targetLabel = titleLabelsArr[targetIndex]

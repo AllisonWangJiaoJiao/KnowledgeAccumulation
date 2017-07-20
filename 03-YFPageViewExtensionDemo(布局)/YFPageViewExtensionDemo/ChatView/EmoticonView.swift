@@ -43,7 +43,7 @@ extension EmoticonView {
         pageCollectionView.dataSource = self
         //pageCollectionView.delegate = self
         pageCollectionView.register(nib: UINib(nibName: "EmoticonViewCell", bundle: nil), identifier: kEmoticonCellID)
-//        pageCollectionView.register(cell: UITableViewCell.self, identifier: kEmoticonCellID)
+
     }
 }
 
@@ -51,20 +51,17 @@ extension EmoticonView {
 extension EmoticonView : YFPageCollectionViewDataSource {
   
     func numberOfSections(in pageCollectionView: YFPageCollectionView) -> Int {
-        return  2
+        return  EmoticonViewModel.shareInstance.packagesArr.count
     }
     
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 30
-        }else{
-            return 10
-        }
+
+      return  EmoticonViewModel.shareInstance.packagesArr[section].emoticons.count
     }
     
     func pageCollectionView(_ pageCollectionView: YFPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kEmoticonCellID, for: indexPath) as! EmoticonViewCell
-        cell.backgroundColor = UIColor.randomColor()
+        cell.emoticon = EmoticonViewModel.shareInstance.packagesArr[indexPath.section].emoticons[indexPath.item]
         return cell
     }
     

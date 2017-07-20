@@ -58,7 +58,7 @@ extension YFPageCollectionView{
         titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
         addSubview(titleView)
         titleView.delegate = self
-        titleView.backgroundColor = UIColor.randomColor()
+        titleView.backgroundColor = UIColor.black
         
         // 2.创建UIPageControl
         let pageControlHeight : CGFloat = 20
@@ -68,7 +68,7 @@ extension YFPageCollectionView{
         pageControl.numberOfPages = 4
         pageControl.isEnabled = false
         addSubview(pageControl)
-        pageControl.backgroundColor = UIColor.randomColor()
+        pageControl.backgroundColor = UIColor.black
         
         // 3.创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
@@ -79,7 +79,7 @@ extension YFPageCollectionView{
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.randomColor()
+        
         
     }
 }

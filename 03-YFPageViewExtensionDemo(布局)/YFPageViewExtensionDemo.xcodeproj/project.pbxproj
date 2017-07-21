@@ -20,6 +20,9 @@
 		371FC9611F21A1A2004CDC05 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FC95F1F21A1A2004CDC05 /* GiftViewCell.swift */; };
 		371FC9621F21A1A2004CDC05 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371FC9601F21A1A2004CDC05 /* GiftViewCell.xib */; };
 		371FC9641F21A1EB004CDC05 /* KingfisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FC9631F21A1EB004CDC05 /* KingfisherExtension.swift */; };
+		371FC9661F21A492004CDC05 /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FC9651F21A492004CDC05 /* GiftViewModel.swift */; };
+		371FC9681F21A79B004CDC05 /* GiftList.json in Resources */ = {isa = PBXBuildFile; fileRef = 371FC9671F21A79B004CDC05 /* GiftList.json */; };
+		371FC96A1F21B196004CDC05 /* GiftPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371FC9691F21B196004CDC05 /* GiftPackage.swift */; };
 		372863091ED17CA400F0A099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372863071ED17CA400F0A099 /* Main.storyboard */; };
 		3728630B1ED17CA400F0A099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3728630A1ED17CA400F0A099 /* Assets.xcassets */; };
 		3728630E1ED17CA400F0A099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3728630C1ED17CA400F0A099 /* LaunchScreen.storyboard */; };
@@ -58,6 +61,9 @@
 		371FC95F1F21A1A2004CDC05 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
 		371FC9601F21A1A2004CDC05 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
 		371FC9631F21A1EB004CDC05 /* KingfisherExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherExtension.swift; sourceTree = "<group>"; };
+		371FC9651F21A492004CDC05 /* GiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
+		371FC9671F21A79B004CDC05 /* GiftList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GiftList.json; sourceTree = "<group>"; };
+		371FC9691F21B196004CDC05 /* GiftPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftPackage.swift; sourceTree = "<group>"; };
 		372863001ED17CA400F0A099 /* YFPageViewExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFPageViewExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372863081ED17CA400F0A099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3728630A1ED17CA400F0A099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,10 +159,10 @@
 		372863021ED17CA400F0A099 /* YFPageViewExtensionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				371FC94A1F219EF3004CDC05 /* View */,
 				376326AC1F20A84200825E0B /* Resource */,
 				372863151ED17CF500F0A099 /* YFPageView */,
 				378F4AC01F1F0BE900B11347 /* Tools */,
+				371FC94A1F219EF3004CDC05 /* View */,
 				376326BA1F20AA5400825E0B /* ViewModel */,
 				376326B11F20A99200825E0B /* Model */,
 				378F4ABD1F1F0BE900B11347 /* Controller */,
@@ -184,6 +190,7 @@
 		376326AC1F20A84200825E0B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				371FC9671F21A79B004CDC05 /* GiftList.json */,
 				376326AD1F20A84F00825E0B /* QHNormalEmotionSort.plist */,
 				376326AE1F20A84F00825E0B /* QHSohuGifSort.plist */,
 			);
@@ -204,6 +211,8 @@
 		376326BA1F20AA5400825E0B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				371FC9691F21B196004CDC05 /* GiftPackage.swift */,
+				371FC9651F21A492004CDC05 /* GiftViewModel.swift */,
 				376326BB1F20AA5400825E0B /* EmoticonViewModel.swift */,
 			);
 			path = ViewModel;
@@ -337,6 +346,7 @@
 				372863091ED17CA400F0A099 /* Main.storyboard in Resources */,
 				371FC95A1F219F81004CDC05 /* GiftListView.xib in Resources */,
 				371FC9551F219EF3004CDC05 /* EmoticonViewCell.xib in Resources */,
+				371FC9681F21A79B004CDC05 /* GiftList.json in Resources */,
 				371FC9521F219EF3004CDC05 /* ChatToolsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,8 +412,10 @@
 				378F4AC91F1F0BE900B11347 /* UIColor-Extension.swift in Sources */,
 				378F4ACC1F1F0D8500B11347 /* RoomViewController.swift in Sources */,
 				3728631F1ED17D4000F0A099 /* YFPageCollectionView.swift in Sources */,
+				371FC9661F21A492004CDC05 /* GiftViewModel.swift in Sources */,
 				371FC9641F21A1EB004CDC05 /* KingfisherExtension.swift in Sources */,
 				378F4AD61F1F33F900B11347 /* XMGNavigationController.swift in Sources */,
+				371FC96A1F21B196004CDC05 /* GiftPackage.swift in Sources */,
 				371FC9591F219F81004CDC05 /* GiftListView.swift in Sources */,
 				371FC9511F219EF3004CDC05 /* ChatToolsView.swift in Sources */,
 				3728631A1ED17CF500F0A099 /* YFContentView.swift in Sources */,

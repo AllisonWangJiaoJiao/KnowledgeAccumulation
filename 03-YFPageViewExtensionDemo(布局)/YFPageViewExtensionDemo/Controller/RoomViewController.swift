@@ -9,6 +9,8 @@
 import UIKit
 
 private let kChatToolsViewHeight : CGFloat = 44
+private let kGiftlistViewHeight : CGFloat = kScreenH * 0.5
+
 
 class RoomViewController: UIViewController, Emitterable {
     
@@ -16,6 +18,8 @@ class RoomViewController: UIViewController, Emitterable {
     @IBOutlet weak var bgImageView: UIImageView!
     
     fileprivate lazy var chatToolsView : ChatToolsView = ChatToolsView.loadFromNib()
+    fileprivate lazy var giftlistView : GiftListView = GiftListView.loadFromNib()
+
     
     // MARK: 系统回调函数
     override func viewDidLoad() {
@@ -56,11 +60,18 @@ extension RoomViewController {
     }
     
     fileprivate func setupBottomView() {
-        print(view.bounds)
+        //1.设置chatToolsView
         chatToolsView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolsViewHeight)
         chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         chatToolsView.delegate = self
         view.addSubview(chatToolsView)
+        
+        //2.设置giftlistView
+        giftlistView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftlistViewHeight)
+        giftlistView.autoresizingMask = [.flexibleTopMargin,.flexibleWidth]
+        giftlistView.delegate = self
+        view.addSubview(giftlistView)
+    
     }
 }
 
@@ -74,6 +85,11 @@ extension RoomViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         chatToolsView.inputTextField.resignFirstResponder()
+        
+        UIView.animate(withDuration: 0.35, animations: {
+            self.giftlistView.frame.origin.y = self.view.bounds.height
+        })
+
     }
     
     @IBAction func bottomMenuClick(_ sender: UIButton) {
@@ -85,6 +101,9 @@ extension RoomViewController {
             print("点击了分享")
         case 2:
             print("点击了礼物")
+            UIView.animate(withDuration: 0.35, animations: { 
+                 self.giftlistView.frame.origin.y = self.view.bounds.height - kGiftlistViewHeight
+            })
         case 3:
             print("点击了更多")
         case 4:
@@ -116,8 +135,12 @@ extension RoomViewController {
 
 
 // MARK:- 监听用户输入的内容
-extension RoomViewController : ChatToolsViewDelegate {
+extension RoomViewController : ChatToolsViewDelegate ,GiftListViewDelegate{
     func chatToolsView(toolView: ChatToolsView, message: String) {
         print(message)
+    }
+    
+    func giftListView(giftView: GiftListView, giftModel: GiftModel) {
+        print(giftModel.subject)
     }
 }

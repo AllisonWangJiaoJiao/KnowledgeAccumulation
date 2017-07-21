@@ -12,6 +12,8 @@ private let kEmoticonCell = "kEmoticonCell"
 
 class ViewController: UIViewController {
     
+ 
+    
     @IBAction func chatClick(_ sender: UIButton) {
         
         let roomVc = RoomViewController()
@@ -21,6 +23,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+  
         
     }
 }

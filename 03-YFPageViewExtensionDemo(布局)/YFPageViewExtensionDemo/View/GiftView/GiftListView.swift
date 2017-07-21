@@ -21,7 +21,7 @@ class GiftListView: UIView, NibLoadable {
     
     fileprivate var pageCollectionView : YFPageCollectionView!
     fileprivate var currentIndexPath : IndexPath?
-//    fileprivate var giftVM : GiftViewModel = GiftViewModel()
+    fileprivate var giftVM : GiftViewModel = GiftViewModel()
     
     weak var delegate : GiftListViewDelegate?
     
@@ -32,9 +32,19 @@ class GiftListView: UIView, NibLoadable {
         setupGiftView()
         
         // 2.加载礼物的数据
-//        loadGiftData()
+        loadGiftData()
     }
 }
+// MARK:- 加载数据
+extension GiftListView {
+    
+    fileprivate func loadGiftData() {
+        giftVM.loadGiftData {
+            self.pageCollectionView.reloadData()
+        }
+    }
+}
+
 
 extension GiftListView {
     fileprivate func setupUI() {
@@ -56,25 +66,14 @@ extension GiftListView {
         
         var pageViewFrame = giftView.bounds
         pageViewFrame.size.width = kScreenW
-        pageCollectionView = YFPageCollectionView(frame: pageViewFrame, titles: ["热门", "高级", "豪华", "专属"], isTitleInTop: true, layout: layout, style: style)
- 
+        pageCollectionView = YFPageCollectionView(frame: pageViewFrame, titles: ["type1","type2", "type3", "type4","type5"], isTitleInTop: true, layout: layout, style: style)
         giftView.addSubview(pageCollectionView)
-        
         pageCollectionView.dataSource = self
         pageCollectionView.delegate = self
-        
         pageCollectionView.register(nib: UINib(nibName: "GiftViewCell", bundle: nil), identifier: kGiftCellID)
     }
 }
 
-// MARK:- 加载数据
-extension GiftListView {
-//    fileprivate func loadGiftData() {
-//        giftVM.loadGiftData {
-//            self.pageCollectionView.reloadData()
-//        }
-//    }
-}
 
 
 
@@ -82,21 +81,19 @@ extension GiftListView {
 extension GiftListView : YFPageCollectionViewDataSource, YFPageCollectionViewDelegate {
     
     func numberOfSections(in pageCollectionView: YFPageCollectionView) -> Int {
-//        return giftVM.giftlistData.count
-        return 4
+        return giftVM.giftlistArr.count
     }
     
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {
-//        let package = giftVM.giftlistData[section]
-//        return package.list.count
-        return 10
+        let package = giftVM.giftlistArr[section]
+        return package.list.count
     }
     
     func pageCollectionView(_ pageCollectionView: YFPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGiftCellID, for: indexPath) as! GiftViewCell
         
-//        let package = giftVM.giftlistData[indexPath.section]
-//        cell.giftModel = package.list[indexPath.item]
+        let package = giftVM.giftlistArr[indexPath.section]
+        cell.giftModel = package.list[indexPath.item]
         
         return cell
     }
@@ -111,8 +108,8 @@ extension GiftListView : YFPageCollectionViewDataSource, YFPageCollectionViewDel
 // MARK:- 送礼物
 extension GiftListView {
     @IBAction func sendGiftBtnClick() {
-//        let package = giftVM.giftlistData[currentIndexPath!.section]
-//        let giftModel = package.list[currentIndexPath!.item]
-//        delegate?.giftListView(giftView: self, giftModel: giftModel)
+        let package = giftVM.giftlistArr[currentIndexPath!.section]
+        let giftModel = package.list[currentIndexPath!.item]
+        delegate?.giftListView(giftView: self, giftModel: giftModel)
     }
 }

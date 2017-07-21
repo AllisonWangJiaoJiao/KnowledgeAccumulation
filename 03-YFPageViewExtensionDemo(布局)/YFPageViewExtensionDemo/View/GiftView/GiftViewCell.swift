@@ -32,6 +32,7 @@ class GiftViewCell: UICollectionViewCell {
         selectedView.layer.borderColor = UIColor.orange.cgColor
         selectedView.backgroundColor = UIColor.black
         
+        //设置选中时候的背景 
         selectedBackgroundView = selectedView
     }
 }

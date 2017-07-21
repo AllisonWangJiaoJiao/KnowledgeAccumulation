@@ -11,6 +11,9 @@ import UIKit
 private let kEmoticonCellID = "kEmoticonCellID"
 
 class EmoticonView: UIView {
+    
+    var emoticonClickCallback : ((Emoticon)->Void)?
+    
  
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +29,7 @@ class EmoticonView: UIView {
 
 extension EmoticonView {
     fileprivate func setupUI() {
+        
         // 1.创建HYPageCollectionView
         let style = YFPageStyle()
         style.isShowBottomLine = true
@@ -41,7 +45,7 @@ extension EmoticonView {
         
         // 3.设置pageCollectionView的属性
         pageCollectionView.dataSource = self
-        //pageCollectionView.delegate = self
+        pageCollectionView.delegate = self
         pageCollectionView.register(nib: UINib(nibName: "EmoticonViewCell", bundle: nil), identifier: kEmoticonCellID)
 
     }
@@ -67,4 +71,21 @@ extension EmoticonView : YFPageCollectionViewDataSource {
     
     
 }
+
+extension EmoticonView : YFPageCollectionViewDelegate {
+
+    func pageCollectionView(_ collectionView: YFPageCollectionView, didSelectItemAt indexPath: IndexPath) {
+        let emoticon = EmoticonViewModel.shareInstance.packagesArr[indexPath.section].emoticons[indexPath.item]
+        
+        if let emoticonClickCallback = emoticonClickCallback {
+            emoticonClickCallback(emoticon)
+        }
+        
+    }
+}
+
+
+
+
+
 

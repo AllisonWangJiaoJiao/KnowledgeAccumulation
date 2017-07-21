@@ -50,7 +50,6 @@ extension YFPageView {
         let titleFrame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleViewHeight)
         titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style : style)
         addSubview(titleView)
-        titleView.backgroundColor = UIColor.randomColor()
         
     }
     
@@ -58,7 +57,7 @@ extension YFPageView {
         let contentFrame = CGRect(x: 0, y: style.titleViewHeight, width: bounds.width, height: bounds.height - style.titleViewHeight)
         let contentView = YFContentView(frame: contentFrame, childVcs: childVcs, parentVc: parentVc)
         addSubview(contentView)
-        contentView.backgroundColor = UIColor.randomColor()
+        
         
         //让contentView成为titleView的代理
         titleView.delegate = contentView

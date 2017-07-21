@@ -13,12 +13,16 @@ protocol YFPageCollectionViewDataSource : class {
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int
     func pageCollectionView(_ pageCollectionView : YFPageCollectionView ,_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
 }
+protocol YFPageCollectionViewDelegate :class{
+    func pageCollectionView(_ collectionView: YFPageCollectionView, didSelectItemAt indexPath: IndexPath)
+}
 
 //private let kCollectionViewCell = "kCollectionViewCell"
 
 class YFPageCollectionView: UIView {
     
      weak var dataSource : YFPageCollectionViewDataSource?
+    weak var delegate : YFPageCollectionViewDelegate?
     fileprivate var titlesArr:[String]
     fileprivate var isTitleInTop: Bool
     fileprivate var layout: YFPageCollectionViewLayout
@@ -58,7 +62,8 @@ extension YFPageCollectionView{
         titleView = YFTitleView(frame: titleFrame, titles: titlesArr, style: style)
         addSubview(titleView)
         titleView.delegate = self
-        titleView.backgroundColor = UIColor.black
+        titleView.backgroundColor = UIColor.lightGray
+        
         
         // 2.创建UIPageControl
         let pageControlHeight : CGFloat = 20
@@ -103,6 +108,10 @@ extension YFPageCollectionView {
 
 // MARK:- UICollectionViewDataSource
 extension YFPageCollectionView:UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.pageCollectionView(self, didSelectItemAt: indexPath)
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return dataSource?.numberOfSections(in: self) ?? 0

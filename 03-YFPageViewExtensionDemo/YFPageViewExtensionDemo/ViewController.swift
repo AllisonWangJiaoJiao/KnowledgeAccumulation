@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let pageFrame = CGRect(x: 0, y: 100, width: view.bounds.width, height: 300)
-        let titlesArr = ["土豪","地主"] //numberOfSections
+        let titlesArr = ["土豪","地主","科技","新闻"] //numberOfSections
         let style = YFPageStyle()
         style.isShowBottomLine = true
         let layout = YFPageCollectionViewLayout()
@@ -36,11 +36,10 @@ class ViewController: UIViewController {
 extension ViewController : YFPageCollectionViewDataSource{
     
     func numberOfSections(in pageCollectionView: YFPageCollectionView) -> Int {
-        return 2
+        return 4
     }
     
     func pageCollectionView(_ collectionView: YFPageCollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return Int(arc4random_uniform(30)) + 25
         if section == 0 {
             return 20
         }else {

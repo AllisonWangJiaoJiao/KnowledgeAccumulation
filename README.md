@@ -6,8 +6,19 @@
 ![MacDown logo](http://img.hb.aicdn.com/cff8740f17cbc5cc3e665df3a14854d76b1ea3ac29b81-RSxKA3_fw658)
 
 02-UIViewFormXIB(POP)
-
 详细用法详见连接: http://www.jianshu.com/p/8cbe0d767ba4
+
+03-YFPageViewDemo效果图
+
+![MacDown logo](https://hbimg.b0.upaiyun.com/6ff3bdcde79c1548d934f44543bbe872c0ce24a66039d-6Ol45y_fw658)
+
+03-YFPageViewExtensionDemo效果图
+
+![MacDown logo](https://hbimg.b0.upaiyun.com/6ee91d149c7aac0d19888c1193a52b1ffd8c3aee3c8f4-v0qVBb_fw658)
+
+
+03-YFPageViewExtensionDemo(布局)
+![MacDown logo](https://hbimg.b0.upaiyun.com/3974abbf4a21e752c9b074d26a675d12575caf6a9e05e-GedKnE_fw658)
 
 04-ApplePayDemo 效果图如下
 

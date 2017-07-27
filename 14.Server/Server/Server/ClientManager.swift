@@ -22,7 +22,8 @@ class ClientManager: NSObject {
     
     fileprivate var isClientConnected : Bool = false
     
-    fileprivate var revHeartBeat : Bool = false
+    //fileprivate var revHeartBeat : Bool = false
+     fileprivate var heatTimeCount : Int = 0
     
     init(tcpClient:TCPClient) {
         self.tcpClient = tcpClient
@@ -36,9 +37,10 @@ extension ClientManager {
         
         isClientConnected = true
         
-        let timer = Timer(fireAt: Date(timeIntervalSinceNow: 10), interval: 10, target: self, selector: #selector(checkHeartBeat), userInfo: nil, repeats: true)
+        let timer = Timer(fireAt: Date(), interval: 1, target: self, selector: #selector(checkHeartBeat), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
-        RunLoop.current.run()
+        timer.fire()
+        print("++++++++")
         
         while true {
             
@@ -63,7 +65,7 @@ extension ClientManager {
                     _ = tcpClient.close()
                     delegate?.removeClient(self)
                 }else if type == 100 {//心跳包
-                    revHeartBeat = true
+                    heatTimeCount = 0
                     let msg = String.init(data: msgData, encoding: String.Encoding.utf8)
                     print(msg)
                     continue
@@ -74,10 +76,7 @@ extension ClientManager {
           
                 
             }else{
-                delegate?.removeClient(self)
-                isClientConnected = false
-                print("客户端断开连接")
-                _ = tcpClient.close()
+               self.removeClient()
             }
 
         }
@@ -86,13 +85,23 @@ extension ClientManager {
     
     @objc fileprivate func checkHeartBeat() {
         
-        if !revHeartBeat {
-            _ = tcpClient.close()
-            delegate?.removeClient(self)
-        }else{
-            revHeartBeat = false
+        print("------")
+
+        heatTimeCount += 1
+        if heatTimeCount >= 10 {
+            removeClient()
         }
         
+    }
+    
+    fileprivate func removeClient(){
+      
+        delegate?.removeClient(self)
+        isClientConnected = false
+        print("客户端断开连接")
+        _ = tcpClient.close()
+
+
     }
     
 }

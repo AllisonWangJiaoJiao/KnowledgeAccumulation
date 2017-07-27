@@ -124,6 +124,7 @@ extension HYSocket {
     func sendTextMsg(message:String)  {
         //1.创建textMsg的类型
         let textMsg = TextMessage.Builder()
+        textMsg.user = try! userInfo.build()
         textMsg.text = message
         
         //2.获取对应的data
@@ -138,6 +139,7 @@ extension HYSocket {
     func sendGiftMsg(giftname:String,giftURL:String,giftCount:String)  {
         //1.创建giftMsg 
         let giftMsg = GiftMessage.Builder()
+        giftMsg.user = try! userInfo.build()
         giftMsg.giftname  = giftname
         giftMsg.giftUrl = giftURL
         giftMsg.giftCount = giftCount
@@ -166,6 +168,19 @@ extension HYSocket {
         let totalData = headerData + typeData + data
   
         tcpClient.send(data: totalData)
+    }
+    
+    //心跳包
+    func sendHeartBeat()  {
+        
+        //获取心跳包中的数据
+        let heartString = "I am is a heart"
+        let heartData = heartString.data(using: String.Encoding.utf8)!
+        
+        //2.发送数据
+        sendMsg(data: heartData, type: 100)
+        
+        
     }
     
     

@@ -38,7 +38,7 @@ extension ClientManager {
         
         let timer = Timer(fireAt: Date(timeIntervalSinceNow: 10), interval: 10, target: self, selector: #selector(checkHeartBeat), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
-        
+        RunLoop.current.run()
         
         while true {
             
@@ -55,18 +55,20 @@ extension ClientManager {
                 (typeData as NSData).getBytes(&type, length: 2)
                 print("type:\(type)")
                 
-                if type == 1 {
-                   _ = tcpClient.close()
-                    delegate?.removeClient(self)
-                }else if type == 100 {//心跳包
-                    revHeartBeat = true
-                    continue
-                }
-                
                 //2.根据长度,读取真实消息
                 guard let msg = tcpClient.read(length) else {return}
                 let msgData = Data(bytes: msg, count: length)
        
+                if type == 1 {
+                    _ = tcpClient.close()
+                    delegate?.removeClient(self)
+                }else if type == 100 {//心跳包
+                    revHeartBeat = true
+                    let msg = String.init(data: msgData, encoding: String.Encoding.utf8)
+                    print(msg)
+                    continue
+                }
+                
                 let totalData = headData + typeData + msgData
                 delegate?.sendMsgToClient(totalData)
           

@@ -115,10 +115,16 @@ extension YFContentView : UICollectionViewDelegate {
     //1.停止减速
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         contentEndScroll()
+        scrollView.isScrollEnabled = true
+
     }
     //2.没有减速
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        contentEndScroll()
+        if !decelerate {
+             contentEndScroll()
+        }else{
+            scrollView.isScrollEnabled = false
+        }
     }
     
     

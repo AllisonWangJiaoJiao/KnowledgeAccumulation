@@ -16,6 +16,8 @@ class ChatContentView: UIView,NibLoadable {
  
     override func awakeFromNib() {
         super.awakeFromNib()
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kChatContentCellID)
     }
 

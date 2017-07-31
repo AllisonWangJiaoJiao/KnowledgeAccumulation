@@ -1,0 +1,6 @@
+framework module Pods_YFPageViewExtensionDemo {
+  umbrella header "Pods-YFPageViewExtensionDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

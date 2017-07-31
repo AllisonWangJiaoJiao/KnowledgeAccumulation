@@ -1,0 +1,15 @@
+PODS:
+  - Kingfisher (3.10.2)
+  - ProtocolBuffers-Swift (3.0.16)
+
+DEPENDENCIES:
+  - Kingfisher (~> 3.10.2)
+  - ProtocolBuffers-Swift
+
+SPEC CHECKSUMS:
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+  ProtocolBuffers-Swift: cba3f101c408355bb2a426c8d14c63cf2de3f567
+
+PODFILE CHECKSUM: 727796db6a3cb53415a59709c04f51032918e9b6
+
+COCOAPODS: 1.2.1

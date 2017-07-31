@@ -10,6 +10,7 @@ import UIKit
 
 private let kChatToolsViewHeight : CGFloat = 44
 private let kGiftlistViewHeight : CGFloat = kScreenH * 0.5
+private let kChatContentViewHeight : CGFloat = 200
 
 
 class RoomViewController: UIViewController, Emitterable {
@@ -19,6 +20,7 @@ class RoomViewController: UIViewController, Emitterable {
     
     fileprivate lazy var chatToolsView : ChatToolsView = ChatToolsView.loadFromNib()
     fileprivate lazy var giftlistView : GiftListView = GiftListView.loadFromNib()
+    fileprivate lazy var chatContentView :ChatContentView = ChatContentView.loadFromNib()
     fileprivate lazy var socket : HYSocket = HYSocket.init(addr: "0.0.0.0", port: 7878)
 
     fileprivate var heatBeatTimer : Timer?
@@ -129,7 +131,11 @@ extension RoomViewController {
         giftlistView.autoresizingMask = [.flexibleTopMargin,.flexibleWidth]
         giftlistView.delegate = self
         view.addSubview(giftlistView)
-    
+        
+        //3.设置chat内容的view
+        chatContentView.frame = CGRect(x: 0, y: view.bounds.height - 44 - kChatContentViewHeight, width: view.bounds.width, height: kChatContentViewHeight)
+        chatContentView.autoresizingMask = [.flexibleWidth,.flexibleTopMargin]
+        view.addSubview(chatContentView)
     }
 }
 

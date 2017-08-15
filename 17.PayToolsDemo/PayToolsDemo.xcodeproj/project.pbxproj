@@ -25,6 +25,8 @@
 		372C3BEE1F42C5200036FC18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C3BED1F42C5200036FC18 /* Foundation.framework */; };
 		372C3BF01F42C5260036FC18 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C3BEF1F42C5260036FC18 /* CFNetwork.framework */; };
 		372C3BF21F42C52D0036FC18 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C3BF11F42C52D0036FC18 /* CoreMotion.framework */; };
+		372C3BFB1F42C5BA0036FC18 /* CommonsLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C3BF91F42C5BA0036FC18 /* CommonsLet.swift */; };
+		372C3BFC1F42C5BA0036FC18 /* PayTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C3BFA1F42C5BA0036FC18 /* PayTools.swift */; };
 		EF078A877FF00E90CF8DC172 /* Pods_PayToolsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90AC80BA2AEBFE4762CCB1A /* Pods_PayToolsDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		372C3BED1F42C5200036FC18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		372C3BEF1F42C5260036FC18 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		372C3BF11F42C52D0036FC18 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		372C3BF91F42C5BA0036FC18 /* CommonsLet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonsLet.swift; sourceTree = "<group>"; };
+		372C3BFA1F42C5BA0036FC18 /* PayTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTools.swift; sourceTree = "<group>"; };
 		D90AC80BA2AEBFE4762CCB1A /* Pods_PayToolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayToolsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDF0361B4065E34DFE63B1D /* Pods-PayToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayToolsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayToolsDemo/Pods-PayToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		EC3A5015E5E6B7208F7226D4 /* Pods-PayToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayToolsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayToolsDemo/Pods-PayToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		372C3BC01F42C2CE0036FC18 /* PayToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				372C3BF81F42C5BA0036FC18 /* PayTools */,
 				372C3BD81F42C4A00036FC18 /* Alipay */,
 				372C3BC11F42C2CE0036FC18 /* AppDelegate.swift */,
 				372C3BC31F42C2CE0036FC18 /* ViewController.swift */,
@@ -136,6 +141,15 @@
 				372C3BDA1F42C4A00036FC18 /* AlipaySDK.framework */,
 			);
 			path = Alipay;
+			sourceTree = "<group>";
+		};
+		372C3BF81F42C5BA0036FC18 /* PayTools */ = {
+			isa = PBXGroup;
+			children = (
+				372C3BF91F42C5BA0036FC18 /* CommonsLet.swift */,
+				372C3BFA1F42C5BA0036FC18 /* PayTools.swift */,
+			);
+			path = PayTools;
 			sourceTree = "<group>";
 		};
 		F2A20BBE1F23B585F2199015 /* Pods */ = {
@@ -271,8 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372C3BFC1F42C5BA0036FC18 /* PayTools.swift in Sources */,
 				372C3BC41F42C2CE0036FC18 /* ViewController.swift in Sources */,
 				372C3BC21F42C2CE0036FC18 /* AppDelegate.swift in Sources */,
+				372C3BFB1F42C5BA0036FC18 /* CommonsLet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

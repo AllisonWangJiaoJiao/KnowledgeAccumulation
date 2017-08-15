@@ -7,49 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F313F25771B66DF1A09A19A36F97A1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		94C880055DE5BE8A87BB918C994584D5 /* Pods-PayToolsDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D83511A44D57F6486260983D5C6F6770 /* Pods-PayToolsDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD8AFA27A89D31C56A2C1E8CB968C266 /* Pods-PayToolsDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D53EF9FFCDA53E45360371D829FD07F9 /* Pods-PayToolsDemo-dummy.m */; };
+		0CDF9C5D3D49D037C03B231590999A82 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F387195D8E25B524243DDB3A0892414 /* SVProgressHUD.bundle */; };
+		12913428AD0FDBCBC64C6EE15B409003 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C84BDA5BCA00D2AF4A70144E5B9DAE59 /* SVRadialGradientLayer.m */; };
+		2F3E6E0095029F5F99B6ACB52F2CC9F7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10D40244D88257A9DDD62F25B273C6 /* SVIndefiniteAnimatedView.m */; };
+		4988897F6500A530B60FDD5867E8C500 /* Pods-PayToolsDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D53EF9FFCDA53E45360371D829FD07F9 /* Pods-PayToolsDemo-dummy.m */; };
+		4E7B54CEA675FD580BD76760B3274292 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		5B3A7CAD75A36B77B2C11E137AF73395 /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 67A8E024FF463C50E8CEF5332FC46111 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63FDC7FCEBE40B9E9EB18CDBBC6708D1 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCA18934647593C61474D1D5A954F6E /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8221F094BE81743D61C9BD701928AFA9 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854C4CDABA2E32FC8960F7C04B89537 /* SVProgressHUD.m */; };
+		B787DEFF91833FD861F56128C1723743 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = B2BAFDBDBB9DF2F936A83B049AE441C1 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8490CB87F5A523680E96268BF5377AC /* Pods-PayToolsDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D83511A44D57F6486260983D5C6F6770 /* Pods-PayToolsDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAE83BFCBF3F9A7E38402965CEC59196 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A612A248E2E3E2BBFEEB0E463192309 /* SVProgressAnimatedView.m */; };
+		CAAB0477A5BB5C38A7DD8DEB1B9AA61A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		DBFF5156B41D7CCD9895EE50D0D1A3E8 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A053498CA8677BF53A312D70F5CC8E /* SVProgressHUD-dummy.m */; };
+		DDB62DABF621496DD67E59E532545BB3 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B7DD0BC5A8B830869F4B1781587619 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E44DFD2AAA97A3A2468E6B09B8593311 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1A5E7B8D0F380DC8C7472EBF78D978 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFA4F613FCA196B537D6F4F4D6DE1FA8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B1B97463BCA1C1C334B3F97C03B37FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E82E4A41C1DA487D1910EC0C0163CB6;
+			remoteInfo = SVProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		14F07B8C1F9BF372B656923553C99A94 /* Pods-PayToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PayToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		16A89AA1AFB074B335C0ADE0A60E708F /* Pods-PayToolsDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PayToolsDemo-resources.sh"; sourceTree = "<group>"; };
+		227E2E47B32B3DA88A6E299D15F2CCBC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23A053498CA8677BF53A312D70F5CC8E /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		2854C4CDABA2E32FC8960F7C04B89537 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		2A612A248E2E3E2BBFEEB0E463192309 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		2DCA18934647593C61474D1D5A954F6E /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		3F387195D8E25B524243DDB3A0892414 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		409CB6E6164ECABA2BB31451B71FD28A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B07C3BB4B8CA466DB0CD2B128B7279 /* Pods-PayToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PayToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
-		43F6C0944E30ADD5ECF07C2D1522A6B6 /* Pods_PayToolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PayToolsDemo.framework; path = "Pods-PayToolsDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		49F90B11951290CBC3E4A2EE3262D73F /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5F10D40244D88257A9DDD62F25B273C6 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		67A8E024FF463C50E8CEF5332FC46111 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		69F91A841011F5C7E81BFE071725C4A2 /* Pods-PayToolsDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PayToolsDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		718BC87FC455E21EFBD0004D394698BA /* Pods-PayToolsDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PayToolsDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		87CDB3D598D61A0BC89B7B27F31CA579 /* libWeChatSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = OpenSDK1.7.9/libWeChatSDK.a; sourceTree = "<group>"; };
+		802F2ADED67A0499264F31C337881B64 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DAA75B80AB1445489FC2DD0A46D40AF /* Pods-PayToolsDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PayToolsDemo-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CF669F2A3C60FC2F2471470EF3437F0D /* WechatAuthSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = OpenSDK1.7.9/WechatAuthSDK.h; sourceTree = "<group>"; };
-		D432007AFCD72CFCD152494916936798 /* WXApiObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = OpenSDK1.7.9/WXApiObject.h; sourceTree = "<group>"; };
+		A8E87C5B4BB423E37991EB0FAE52786D /* WechatAuthSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = OpenSDK1.7.9/WechatAuthSDK.h; sourceTree = "<group>"; };
+		B06F48985B0313AEA025E078F8452BD2 /* Pods_PayToolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PayToolsDemo.framework; path = "Pods-PayToolsDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BAFDBDBB9DF2F936A83B049AE441C1 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		B4AC3891AB7F2E80DEA7A12D745145DE /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		B58C076E2BAD9ECF5CFA474A79C8CF9A /* WXApiObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = OpenSDK1.7.9/WXApiObject.h; sourceTree = "<group>"; };
+		C7B7DD0BC5A8B830869F4B1781587619 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		C84BDA5BCA00D2AF4A70144E5B9DAE59 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		D213702C79FA1F83C835072479BD4068 /* libWeChatSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = OpenSDK1.7.9/libWeChatSDK.a; sourceTree = "<group>"; };
+		D250134BB7FE88016EF178B7AA82DD51 /* WXApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = OpenSDK1.7.9/WXApi.h; sourceTree = "<group>"; };
+		D3BDA1542183C17A38645813B40C3759 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
 		D53EF9FFCDA53E45360371D829FD07F9 /* Pods-PayToolsDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PayToolsDemo-dummy.m"; sourceTree = "<group>"; };
 		D83511A44D57F6486260983D5C6F6770 /* Pods-PayToolsDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PayToolsDemo-umbrella.h"; sourceTree = "<group>"; };
-		D872DA8FD0115B06D35AE7F5D05CEFC6 /* WXApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = OpenSDK1.7.9/WXApi.h; sourceTree = "<group>"; };
+		EF1A5E7B8D0F380DC8C7472EBF78D978 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		FF290093FFF688840E032E9BF9270B85 /* Pods-PayToolsDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PayToolsDemo.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D745EEB94B602FD0E1CCAB7436572457 /* Frameworks */ = {
+		141189CCCB4232723205438346EC4C52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F313F25771B66DF1A09A19A36F97A1B /* Foundation.framework in Frameworks */,
+				4E7B54CEA675FD580BD76760B3274292 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A049F68F25031B73B1309B5958490A40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAAB0477A5BB5C38A7DD8DEB1B9AA61A /* Foundation.framework in Frameworks */,
+				EFA4F613FCA196B537D6F4F4D6DE1FA8 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08A034AC77010592AAE3E39F27207DF9 /* Products */ = {
+		1E93A1AAFDC40C71F165DEF8E6988BFF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				43F6C0944E30ADD5ECF07C2D1522A6B6 /* Pods_PayToolsDemo.framework */,
+				227E2E47B32B3DA88A6E299D15F2CCBC /* Info.plist */,
+				D3BDA1542183C17A38645813B40C3759 /* SVProgressHUD.modulemap */,
+				B4AC3891AB7F2E80DEA7A12D745145DE /* SVProgressHUD.xcconfig */,
+				23A053498CA8677BF53A312D70F5CC8E /* SVProgressHUD-dummy.m */,
+				49F90B11951290CBC3E4A2EE3262D73F /* SVProgressHUD-prefix.pch */,
+				67A8E024FF463C50E8CEF5332FC46111 /* SVProgressHUD-umbrella.h */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
 		2D98B6319CDE015DA1D906520616F9A7 /* Targets Support Files */ = {
@@ -58,6 +113,22 @@
 				639D3A4D2F1EF16710B8AE20BF3434EF /* Pods-PayToolsDemo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2D9B740036D74A0D6BCF977E65D36F97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D213702C79FA1F83C835072479BD4068 /* libWeChatSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				978007DCB56F415BE390E0F949D4D4E5 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		639D3A4D2F1EF16710B8AE20BF3434EF /* Pods-PayToolsDemo */ = {
@@ -78,90 +149,142 @@
 			path = "Target Support Files/Pods-PayToolsDemo";
 			sourceTree = "<group>";
 		};
-		7ADA45F435BB210C822629C0D9B54295 /* Pods */ = {
+		69C994BE9E485DBCA02541670E49BE7E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A43FFBF36C44EFC49687ACD3445D2DE1 /* WechatOpenSDK */,
+				3F387195D8E25B524243DDB3A0892414 /* SVProgressHUD.bundle */,
 			);
-			name = Pods;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A682CEF5490C77B9207CF9DE2170253 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B06F48985B0313AEA025E078F8452BD2 /* Pods_PayToolsDemo.framework */,
+				802F2ADED67A0499264F31C337881B64 /* SVProgressHUD.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77CEF8F5789CCF2E184E70167C70F19E /* WechatOpenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A8E87C5B4BB423E37991EB0FAE52786D /* WechatAuthSDK.h */,
+				D250134BB7FE88016EF178B7AA82DD51 /* WXApi.h */,
+				B58C076E2BAD9ECF5CFA474A79C8CF9A /* WXApiObject.h */,
+				2D9B740036D74A0D6BCF977E65D36F97 /* Frameworks */,
+			);
+			name = WechatOpenSDK;
+			path = WechatOpenSDK;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				7ADA45F435BB210C822629C0D9B54295 /* Pods */,
-				08A034AC77010592AAE3E39F27207DF9 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				823DF0BC337B3D0DFF0E536F92391C00 /* Pods */,
+				6A682CEF5490C77B9207CF9DE2170253 /* Products */,
 				2D98B6319CDE015DA1D906520616F9A7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A43FFBF36C44EFC49687ACD3445D2DE1 /* WechatOpenSDK */ = {
+		823DF0BC337B3D0DFF0E536F92391C00 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF669F2A3C60FC2F2471470EF3437F0D /* WechatAuthSDK.h */,
-				D872DA8FD0115B06D35AE7F5D05CEFC6 /* WXApi.h */,
-				D432007AFCD72CFCD152494916936798 /* WXApiObject.h */,
-				BAE538BF620BAC869DB8A0887E84F5CB /* Frameworks */,
+				AB61B6C3347C947EC3BCAB0B302EE855 /* SVProgressHUD */,
+				77CEF8F5789CCF2E184E70167C70F19E /* WechatOpenSDK */,
 			);
-			name = WechatOpenSDK;
-			path = WechatOpenSDK;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		BAE538BF620BAC869DB8A0887E84F5CB /* Frameworks */ = {
+		978007DCB56F415BE390E0F949D4D4E5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				87CDB3D598D61A0BC89B7B27F31CA579 /* libWeChatSDK.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */,
+				FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB61B6C3347C947EC3BCAB0B302EE855 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C7B7DD0BC5A8B830869F4B1781587619 /* SVIndefiniteAnimatedView.h */,
+				5F10D40244D88257A9DDD62F25B273C6 /* SVIndefiniteAnimatedView.m */,
+				2DCA18934647593C61474D1D5A954F6E /* SVProgressAnimatedView.h */,
+				2A612A248E2E3E2BBFEEB0E463192309 /* SVProgressAnimatedView.m */,
+				B2BAFDBDBB9DF2F936A83B049AE441C1 /* SVProgressHUD.h */,
+				2854C4CDABA2E32FC8960F7C04B89537 /* SVProgressHUD.m */,
+				EF1A5E7B8D0F380DC8C7472EBF78D978 /* SVRadialGradientLayer.h */,
+				C84BDA5BCA00D2AF4A70144E5B9DAE59 /* SVRadialGradientLayer.m */,
+				69C994BE9E485DBCA02541670E49BE7E /* Resources */,
+				1E93A1AAFDC40C71F165DEF8E6988BFF /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		32B4A1BB547F850447A41127048A6929 /* Headers */ = {
+		62C6191AB38E4FFD5D3A46F7B65905F0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C880055DE5BE8A87BB918C994584D5 /* Pods-PayToolsDemo-umbrella.h in Headers */,
+				DDB62DABF621496DD67E59E532545BB3 /* SVIndefiniteAnimatedView.h in Headers */,
+				63FDC7FCEBE40B9E9EB18CDBBC6708D1 /* SVProgressAnimatedView.h in Headers */,
+				5B3A7CAD75A36B77B2C11E137AF73395 /* SVProgressHUD-umbrella.h in Headers */,
+				B787DEFF91833FD861F56128C1723743 /* SVProgressHUD.h in Headers */,
+				E44DFD2AAA97A3A2468E6B09B8593311 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CAC5D8E232040F862270B50796CFD3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8490CB87F5A523680E96268BF5377AC /* Pods-PayToolsDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		386E4E6A7864889DA5E22236B9A52355 /* Pods-PayToolsDemo */ = {
+		2E82E4A41C1DA487D1910EC0C0163CB6 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 885C2E3E457E62602F807821FBD11A78 /* Build configuration list for PBXNativeTarget "Pods-PayToolsDemo" */;
+			buildConfigurationList = 0C0EE4844ACE24FA3415902F5405E69F /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				FBEE07B60FF05C40C26602FA3B3F8A9B /* Sources */,
-				D745EEB94B602FD0E1CCAB7436572457 /* Frameworks */,
-				32B4A1BB547F850447A41127048A6929 /* Headers */,
+				3408FF56B208C111DFF6BE370A13E43F /* Sources */,
+				A049F68F25031B73B1309B5958490A40 /* Frameworks */,
+				62C6191AB38E4FFD5D3A46F7B65905F0 /* Headers */,
+				389AEE25660CE2D1237537FFD1C542BB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 802F2ADED67A0499264F31C337881B64 /* SVProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A05FBB37363065BD173F843DABC4DDE7 /* Pods-PayToolsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5397D597D9D7A01E70445994D8A702A4 /* Build configuration list for PBXNativeTarget "Pods-PayToolsDemo" */;
+			buildPhases = (
+				BDF1D2247885768CFA7395EE8F2091CB /* Sources */,
+				141189CCCB4232723205438346EC4C52 /* Frameworks */,
+				C7CAC5D8E232040F862270B50796CFD3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD0C28B98B29D420E7F1BFBDC1DE3380 /* PBXTargetDependency */,
+			);
 			name = "Pods-PayToolsDemo";
 			productName = "Pods-PayToolsDemo";
-			productReference = 43F6C0944E30ADD5ECF07C2D1522A6B6 /* Pods_PayToolsDemo.framework */;
+			productReference = B06F48985B0313AEA025E078F8452BD2 /* Pods_PayToolsDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -181,25 +304,58 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 08A034AC77010592AAE3E39F27207DF9 /* Products */;
+			productRefGroup = 6A682CEF5490C77B9207CF9DE2170253 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				386E4E6A7864889DA5E22236B9A52355 /* Pods-PayToolsDemo */,
+				A05FBB37363065BD173F843DABC4DDE7 /* Pods-PayToolsDemo */,
+				2E82E4A41C1DA487D1910EC0C0163CB6 /* SVProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		389AEE25660CE2D1237537FFD1C542BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CDF9C5D3D49D037C03B231590999A82 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		FBEE07B60FF05C40C26602FA3B3F8A9B /* Sources */ = {
+		3408FF56B208C111DFF6BE370A13E43F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8AFA27A89D31C56A2C1E8CB968C266 /* Pods-PayToolsDemo-dummy.m in Sources */,
+				2F3E6E0095029F5F99B6ACB52F2CC9F7 /* SVIndefiniteAnimatedView.m in Sources */,
+				BAE83BFCBF3F9A7E38402965CEC59196 /* SVProgressAnimatedView.m in Sources */,
+				DBFF5156B41D7CCD9895EE50D0D1A3E8 /* SVProgressHUD-dummy.m in Sources */,
+				8221F094BE81743D61C9BD701928AFA9 /* SVProgressHUD.m in Sources */,
+				12913428AD0FDBCBC64C6EE15B409003 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDF1D2247885768CFA7395EE8F2091CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4988897F6500A530B60FDD5867E8C500 /* Pods-PayToolsDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD0C28B98B29D420E7F1BFBDC1DE3380 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 2E82E4A41C1DA487D1910EC0C0163CB6 /* SVProgressHUD */;
+			targetProxy = 6B1B97463BCA1C1C334B3F97C03B37FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
@@ -250,6 +406,42 @@
 			};
 			name = Debug;
 		};
+		345BE45AAF3F9BFB101783D658B069F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14F07B8C1F9BF372B656923553C99A94 /* Pods-PayToolsDemo.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PayToolsDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PayToolsDemo/Pods-PayToolsDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PayToolsDemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		707B86CFB21B645E37109F39754D4051 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -294,7 +486,7 @@
 			};
 			name = Release;
 		};
-		9B2D3E45B935FF34FB53C05EBBD77CA6 /* Release */ = {
+		A22B6E5DD7EEB07ED0338066A6859192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40B07C3BB4B8CA466DB0CD2B128B7279 /* Pods-PayToolsDemo.release.xcconfig */;
 			buildSettings = {
@@ -330,9 +522,42 @@
 			};
 			name = Release;
 		};
-		CDA29422DB33B81D5AE4EBFAB77198E6 /* Debug */ = {
+		AEF38C2B1DD9591FD57799967945CDD2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14F07B8C1F9BF372B656923553C99A94 /* Pods-PayToolsDemo.debug.xcconfig */;
+			baseConfigurationReference = B4AC3891AB7F2E80DEA7A12D745145DE /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F7A3BBADBE837B9F6E19FF60669DA381 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4AC3891AB7F2E80DEA7A12D745145DE /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -346,20 +571,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PayToolsDemo/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PayToolsDemo/Pods-PayToolsDemo.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PayToolsDemo;
+				PRODUCT_NAME = SVProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -369,6 +591,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C0EE4844ACE24FA3415902F5405E69F /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3BBADBE837B9F6E19FF60669DA381 /* Debug */,
+				AEF38C2B1DD9591FD57799967945CDD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -378,11 +609,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		885C2E3E457E62602F807821FBD11A78 /* Build configuration list for PBXNativeTarget "Pods-PayToolsDemo" */ = {
+		5397D597D9D7A01E70445994D8A702A4 /* Build configuration list for PBXNativeTarget "Pods-PayToolsDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDA29422DB33B81D5AE4EBFAB77198E6 /* Debug */,
-				9B2D3E45B935FF34FB53C05EBBD77CA6 /* Release */,
+				345BE45AAF3F9BFB101783D658B069F2 /* Debug */,
+				A22B6E5DD7EEB07ED0338066A6859192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

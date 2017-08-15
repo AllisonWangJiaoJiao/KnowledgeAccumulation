@@ -7,5 +7,6 @@ target 'PayToolsDemo' do
 
   # Pods for PayToolsDemo
     pod 'WechatOpenSDK'
+    pod 'SVProgressHUD', '~> 2.0.3'
 
 end

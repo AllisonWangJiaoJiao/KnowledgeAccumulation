@@ -12,3 +12,4 @@ import Foundation
 let AlipayBackNotification = "AlipayBackNotification"
 let WXpayBackNotification = "WXpayBackNotification"
 let appScheme = "energytaxi"
+let WX_APPID = "wxc96cfa7c2987121b"
